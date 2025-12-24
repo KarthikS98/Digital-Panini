@@ -168,13 +168,10 @@ This project was developed as part of the **Indian Knowledge Systems (IKS)** cur
 
 - **Developer**: Karthik S
 - **Course**: Indian Knowledge Systems (IKS)
-- **Institution**: [Your College/University Name]
+- **Institution**: RV College of Engineering, Bengaluru
 - **External References**: [ashtadhyayi.com](https://ashtadhyayi.com) for detailed sūtra explanations
 - **Inspiration**: Pāṇini's Aṣṭādhyāyī and traditional Sanskrit grammar texts
 
-## 📄 License
-
-This project is created for educational purposes. Content inspired by classical Sanskrit texts is in the public domain.
 
 For the code and original content:
 ```
@@ -182,14 +179,6 @@ For the code and original content:
 Available for educational and non-commercial use.
 ```
 
-## 📧 Contact
-
-For questions or feedback about this project:
-- **Email**: [your.email@example.com]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-
----
 
 **Note**: This is a student-built educational platform focused on making ancient Sanskrit grammar accessible through modern technology. All external references are credited appropriately.
 
