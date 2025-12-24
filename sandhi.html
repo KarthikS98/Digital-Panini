@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandhi - Digital Pāṇini</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .sandhi-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Left Column - Playground */
+        .playground-column {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5E6D3 100%);
+            padding: 35px;
+            border-radius: 12px;
+            border: 3px solid #8B4513;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.25);
+            position: sticky;
+            top: 80px;
+        }
+
+        .playground-title {
+            color: #654321;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .playground-subtitle {
+            color: #8B4513;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #654321;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #8B4513;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        #apply-sandhi {
+            width: 100%;
+            background: #D4AF37;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        #apply-sandhi:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .result-area {
+            margin-top: 25px;
+            padding: 20px;
+            background: #FFF8DC;
+            border-radius: 6px;
+            border: 2px solid #8B4513;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.15);
+        }
+
+        .result-area label {
+            display: block;
+            color: #654321;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        #sandhi-result {
+            color: #654321;
+            font-size: 1.3rem;
+            font-weight: 700;
+            min-height: 30px;
+            margin-bottom: 15px;
+        }
+
+        .rule-explanation {
+            color: #8B4513;
+            font-size: 0.95rem;
+            margin: 10px 0;
+            font-weight: 600;
+            background: rgba(212, 175, 55, 0.15);
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 4px solid #D4AF37;
+        }
+
+        .sutra-reference {
+            background: #FFF8DC;
+            border: 2px solid #8B4513;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .sutra-reference h4 {
+            color: #654321;
+            font-size: 1rem;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+
+        .sutra-reference .sutra-text {
+            color: #8B4513;
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .sutra-reference p {
+            color: #654321;
+            font-size: 0.9rem;
+            margin: 8px 0 0 0;
+            line-height: 1.6;
+        }
+
+        .learn-more-link {
+            display: inline-block;
+            margin-top: 15px;
+            background: #D4AF37;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 25px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3);
+        }
+
+        .learn-more-link:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Right Column - Theory Cards */
+        .theory-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .theory-card {
+            background: #F5E6D3;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theory-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.25);
+        }
+
+        .theory-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .theory-card h3 {
+            color: #654321;
+            font-size: 1.4rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .expand-icon {
+            font-size: 1.5rem;
+            color: #8B4513;
+            transition: transform 0.3s ease;
+        }
+
+        .theory-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .theory-card-content {
+            color: #654321;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .theory-card.expanded .theory-card-content {
+            max-height: 1000px;
+        }
+
+        .theory-card p {
+            margin-bottom: 15px;
+        }
+
+        .example-box {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 12px 15px;
+            border-radius: 5px;
+            border-left: 4px solid #D4AF37;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            color: #654321;
+            margin: 10px 0;
+        }
+
+        .example-box .sanskrit {
+            font-weight: 600;
+            color: #8B4513;
+        }
+
+        .quick-intro {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5E6D3 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #D4AF37;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .quick-intro h2 {
+            color: #654321;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .quick-intro p {
+            color: #8B4513;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 968px) {
+            .two-column-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .playground-column {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="panini.html">About Pāṇini</a>
+            <a href="learn.html" class="active">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html">Sūtra Reference</a>
+        </div>
+    </nav>
+
+    <div class="container sandhi-container">
+        <h1>Sandhi (संधि)</h1>
+        <p class="subtitle">The Art of Sound Combination in Sanskrit</p>
+        
+        <!-- Quick Introduction -->
+        <div class="quick-intro">
+            <h2>What is Sandhi?</h2>
+            <p>
+                When two Sanskrit words meet, their sounds transform according to precise phonetic rules. 
+                This systematic combination—called <strong>sandhi</strong>—makes Sanskrit flow melodiously 
+                and reveals Pāṇini's genius for algorithmic grammar.
+            </p>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="two-column-layout">
+            <!-- Left: Interactive Playground -->
+            <div class="playground-column">
+                <h2 class="playground-title">Try It Yourself</h2>
+                <p class="playground-subtitle">Experiment with word combinations</p>
+
+                <div class="sandhi-form">
+                    <div class="form-group">
+                        <label for="first-word">First Word:</label>
+                        <input type="text" id="first-word" placeholder="e.g., rāma">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="second-word">Second Word:</label>
+                        <input type="text" id="second-word" placeholder="e.g., iti">
+                    </div>
+
+                    <button id="apply-sandhi">Apply Sandhi</button>
+
+                    <div class="result-area">
+                        <label>Result:</label>
+                        <div id="sandhi-result">Enter words above to see sandhi in action</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Expandable Theory Cards -->
+            <div class="theory-column">
+                <div class="theory-card" onclick="toggleCard(this)">
+                    <div class="theory-card-header">
+                        <h3>📚 Why Sandhi Matters</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="theory-card-content">
+                        <p><strong>Reading:</strong> Sanskrit texts are written with sandhi applied—you must split them to understand individual words.</p>
+                        <p><strong>Pronunciation:</strong> Proper sandhi makes Sanskrit sound natural and euphonic.</p>
+                        <p><strong>Logic:</strong> It reveals the systematic, rule-based nature of the language.</p>
+                        <p><strong>Tradition:</strong> Accurate sandhi preserves the sacred sounds of Vedic texts.</p>
+                    </div>
+                </div>
+
+                <div class="theory-card" onclick="toggleCard(this)">
+                    <div class="theory-card-header">
+                        <h3>🔤 Vowel Sandhi (Svara Sandhi)</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="theory-card-content">
+                        <p>When two vowels meet at a word boundary, they combine or transform according to specific rules.</p>
+                        <div class="example-box">
+                            <span class="sanskrit">rāma + iti → rāmeti</span><br>
+                            <small>(a + i = e)</small>
+                        </div>
+                        <p>This is the most common type of sandhi you'll encounter in Sanskrit texts.</p>
+                    </div>
+                </div>
+
+                <div class="theory-card" onclick="toggleCard(this)">
+                    <div class="theory-card-header">
+                        <h3>🔗 Consonant Sandhi (Vyañjana Sandhi)</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="theory-card-content">
+                        <p>When consonants interact at word boundaries, they may change, assimilate, or combine based on phonetic compatibility.</p>
+                        <div class="example-box">
+                            <span class="sanskrit">tat + ca → tacca</span><br>
+                            <small>(t + c = cc)</small>
+                        </div>
+                        <p>Consonant sandhi ensures smooth transitions between consonant sounds.</p>
+                    </div>
+                </div>
+
+                <div class="theory-card" onclick="toggleCard(this)">
+                    <div class="theory-card-header">
+                        <h3>✨ Visarga Sandhi (ḥ Sandhi)</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="theory-card-content">
+                        <p>The visarga (ḥ) is a special sound that changes based on what follows it, creating various transformations.</p>
+                        <div class="example-box">
+                            <span class="sanskrit">rāmaḥ + asti → rāmo'sti</span><br>
+                            <small>(ḥ + a = o')</small>
+                        </div>
+                        <p>Visarga sandhi is unique to Sanskrit and adds to its distinctive sound.</p>
+                    </div>
+                </div>
+
+                <div class="theory-card" onclick="toggleCard(this)">
+                    <div class="theory-card-header">
+                        <h3>🎯 Pāṇini's Approach</h3>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="theory-card-content">
+                        <p>Pāṇini treated sandhi as algorithmic transformations. Each rule specifies exact conditions (input sounds) and exact outputs (transformed sounds).</p>
+                        <p>His systematic approach makes sandhi predictable and learnable—once you know the rules, you can apply them to any word combination.</p>
+                        <div style="background: rgba(212, 175, 55, 0.15); padding: 15px; border-radius: 5px; border-left: 4px solid #D4AF37; margin-top: 15px; font-style: italic;">
+                            "In sandhi, sounds dance together in perfect harmony, governed by rules as elegant as they are ancient."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle('expanded');
+        }
+    </script>
+    <script src="script.js"></script>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+</body>
+</html>

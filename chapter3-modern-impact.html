@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Modern Impact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="panini.html" class="active">About Pāṇini</a>
+            <a href="learn.html">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html">Sūtra Reference</a>
+        </div>
+    </nav>
+
+    <div class="story-container">
+        <!-- Slide 1: Hero Introduction -->
+        <div class="slide active" id="slide-1">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="videos/tech-circuit-board.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <audio id="tech-ambient" loop autoplay>
+                <source src="audio/tech-ambient.mp3" type="audio/mp3">
+            </audio>
+            
+            <div class="hero-content">
+                <h1 class="fade-in">Modern Impact</h1>
+                <p class="subtitle fade-in">From Ancient India to Silicon Valley</p>
+                <p class="fade-in">How 2,500-year-old grammar shaped our digital world</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Time Jump -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>The Journey Through Time</h2>
+                    
+                    <div class="timeline-journey" style="max-width: 1000px; margin: 60px auto;">
+                        <div class="time-point" style="margin-bottom: 80px; text-align: center;">
+                            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; color: #8B4513;">500 BCE</div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #654321;">Pāṇini writes the Aṣṭādhyāyī</h3>
+                            <p style="font-size: 1.2rem; color: #654321;">Ancient India, Gandhara region</p>
+                        </div>
+                        
+                        <div style="font-size: 3rem; text-align: center; margin: 40px 0; color: #8B4513;">↓</div>
+                        
+                        <div class="time-point" style="margin-bottom: 80px; text-align: center;">
+                            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; color: #8B4513;">1950s-1960s</div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #654321;">Linguists Rediscover Pāṇini</h3>
+                            <p style="font-size: 1.2rem; color: #654321;">Chomsky, Bloomfield study his methods</p>
+                        </div>
+                        
+                        <div style="font-size: 3rem; text-align: center; margin: 40px 0; color: #8B4513;">↓</div>
+                        
+                        <div class="time-point" style="text-align: center;">
+                            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; color: #8B4513;">TODAY</div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #654321;">Pāṇini Powers AI & Computing</h3>
+                            <p style="font-size: 1.2rem; color: #654321;">NASA, Google, universities worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Computer Science Connection -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Computer Science</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px; color: #654321;">Pāṇini's grammar is essentially <strong>the world's first formal language specification!</strong></p>
+                    
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <img src="images/coding-screen.jpg" alt="Code Screen" style="max-width: 100%; border: 3px solid var(--gold); border-radius: 10px; box-shadow: 0 8px 25px var(--shadow-brown);">
+                    </div>
+                    
+                    <div class="connection-box" style="background: #F5E6D3; padding: 30px; border: 2px solid #8B4513; border-radius: 5px; margin-bottom: 25px;">
+                        <h3 style="margin-bottom: 15px; color: #654321;">Direct Influence</h3>
+                        <p style="color: #654321; line-height: 1.7;"><strong>John Backus</strong> (inventor of FORTRAN) explicitly acknowledged Pāṇini when creating <strong>Backus-Naur Form (BNF)</strong> - the standard notation for defining programming language syntax!</p>
+                    </div>
+                    
+                    <div class="parallel-box" style="background: #FFF8DC; padding: 25px; border: 2px solid #8B4513; border-radius: 5px;">
+                        <h4 style="color: #654321; margin-bottom: 15px;">The Parallel:</h4>
+                        <ul style="color: #654321; line-height: 2; font-size: 1.1rem;">
+                            <li>✓ Formal notation system</li>
+                            <li>✓ Recursive definitions</li>
+                            <li>✓ Meta-rules governing rules</li>
+                            <li>✓ Generate infinite valid strings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: NASA Connection -->
+        <div class="slide" id="slide-4">
+            <video class="hero-video" autoplay muted loop playsinline style="opacity: 0.2;">
+                <source src="videos/space-nasa.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <div class="slide-content" style="position: relative; z-index: 10;">
+                <div class="content-slide">
+                    <h2 style="color: var(--gold);">The NASA Paper</h2>
+                    
+                    <div style="max-width: 900px; margin: 0 auto;">
+                        <div class="nasa-highlight" style="background: rgba(245, 230, 211, 0.95); padding: 40px; border: 3px double var(--gold); border-radius: 10px; margin-bottom: 30px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: #654321;">"Knowledge Representation in Sanskrit and Artificial Intelligence"</h3>
+                            <p style="font-size: 1.2rem; margin-bottom: 15px; color: #654321;"><strong>Rick Briggs, NASA (1985)</strong></p>
+                            <p style="font-size: 1.1rem; color: #654321; line-height: 1.7;">A landmark paper proposing Sanskrit as an ideal language for AI because of its unambiguous grammar structure!</p>
+                        </div>
+                        
+                        <div class="key-points" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+                            <div style="background: rgba(255, 248, 220, 0.95); padding: 30px; border: 3px solid var(--gold); border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+                                <h4 style="color: #654321; margin-bottom: 15px; font-size: 1.3rem;">Why Sanskrit?</h4>
+                                <p style="color: #654321; line-height: 1.7;">Pāṇini's grammar creates zero ambiguity - perfect for computers!</p>
+                            </div>
+                            
+                            <div style="background: rgba(255, 248, 220, 0.95); padding: 30px; border: 3px solid var(--gold); border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+                                <h4 style="color: #654321; margin-bottom: 15px; font-size: 1.3rem;">The Impact</h4>
+                                <p style="color: #654321; line-height: 1.7;">Sparked global research into Sanskrit for AI and machine learning</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #FFF8DC; padding: 25px; border-left: 4px solid #8B4513; border-radius: 5px; margin-top: 25px;">
+                            <h4 style="color: #8B4513; margin-bottom: 12px; font-size: 1.2rem;">॥ Why NASA Studied This</h4>
+                            <p style="color: #654321; line-height: 1.7;"><strong>PROBLEM:</strong> Natural language is ambiguous—computers struggle with meaning<br>
+                            <strong>SOLUTION:</strong> Pāṇini's rules eliminate ambiguity through strict formation rules<br>
+                            <strong>RESULT:</strong> Sanskrit became candidate language for AI knowledge representation</p>
+                        </div>
+                        
+                        <div class="fun-fact-box" style="margin-top: 30px;">
+                            <div class="fact-icon">॥</div>
+                            <div class="fact-content">
+                                <h4>Fun Fact</h4>
+                                <p>This paper has been cited in thousands of AI research papers worldwide!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Chomsky Connection -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Noam Chomsky & Linguistics</h2>
+                    
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <img src="images/linguistics-books.jpg" alt="Linguistics Books" style="max-width: 100%; border: 3px solid var(--gold); border-radius: 10px; box-shadow: 0 8px 25px var(--shadow-brown);">
+                    </div>
+                    
+                    <div style="max-width: 1000px; margin: 40px auto;">
+                        <div class="quote-box" style="background: #F5E6D3; padding: 40px; border-left: 5px solid #8B4513; margin-bottom: 25px;">
+                            <p class="quote-text" style="color: #654321; font-size: 1.3rem; line-height: 1.8;">
+                                "The first generative grammar in the modern sense was Pāṇini's grammar of Sanskrit."
+                            </p>
+                            <p class="quote-author" style="color: #8B4513; margin-top: 20px;">— Noam Chomsky</p>
+                        </div>
+                        
+                        <div style="background: #F5E6D3; padding: 25px; border-left: 4px solid #D4AF37; border-radius: 5px; margin-bottom: 35px;">
+                            <h4 style="color: #8B4513; margin-bottom: 12px; font-size: 1.2rem;">॥ Why This Connection Matters</h4>
+                            <p style="color: #654321; line-height: 1.7;"><strong>WHAT:</strong> Both showed language has deep structure with transformation rules<br>
+                            <strong>WHY:</strong> Proved all languages might share universal grammatical principles—revolutionizing 20th century linguistics</p>
+                        </div>
+                        
+                        <div class="influence-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                            <div style="background: #FFF8DC; padding: 30px; border: 2px solid #8B4513; border-radius: 5px;">
+                                <h3 style="color: #654321; margin-bottom: 15px;">Generative Grammar</h3>
+                                <p style="color: #654321; line-height: 1.7;">Chomsky's revolutionary theory of language was directly inspired by Pāṇini's approach of generating sentences from basic rules</p>
+                            </div>
+                            
+                            <div style="background: #F5E6D3; padding: 30px; border: 2px solid #8B4513; border-radius: 5px;">
+                                <h3 style="color: #654321; margin-bottom: 15px;">Transformational Rules</h3>
+                                <p style="color: #654321; line-height: 1.7;">The concept of transforming base structures - Pāṇini did it 2,500 years earlier!</p>
+                            </div>
+                            
+                            <div style="background: #F5E6D3; padding: 30px; border: 2px solid #8B4513; border-radius: 5px;">
+                                <h3 style="color: #654321; margin-bottom: 15px;">Universal Grammar</h3>
+                                <p style="color: #654321; line-height: 1.7;">Chomsky's idea of universal language principles mirrors Pāṇini's systematic framework</p>
+                            </div>
+                            
+                            <div style="background: #FFF8DC; padding: 30px; border: 2px solid #8B4513; border-radius: 5px;">
+                                <h3 style="color: #654321; margin-bottom: 15px;">Formal Language Theory</h3>
+                                <p style="color: #654321; line-height: 1.7;">Modern linguistics owes its formal methods to Pāṇini's pioneering work</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: CS Concepts -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Computer Science Concepts</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: #654321; margin-bottom: 40px;">Pāṇini pioneered concepts now fundamental to computing</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                        <div style="background: #F5E6D3; padding: 40px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="font-size: 1.6rem; margin-bottom: 20px; color: #654321;">Recursion</h3>
+                            <p style="color: #654321; line-height: 1.7;">Rules that call themselves - the heart of programming!</p>
+                        </div>
+                        
+                        <div style="background: #FFF8DC; padding: 40px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="font-size: 1.6rem; margin-bottom: 20px; color: #654321;">Context-Free Grammars</h3>
+                            <p style="color: #654321; line-height: 1.7;">The foundation of compiler design and parsing</p>
+                        </div>
+                        
+                        <div style="background: #FFF8DC; padding: 40px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+
+                            <h3 style="font-size: 1.6rem; margin-bottom: 20px; color: #654321;">Automata Theory</h3>
+                            <p style="color: #654321; line-height: 1.7;">State machines and finite automata have parallels in Pāṇini's systematic approach</p>
+                        </div>
+                        
+                        <div style="background: #F5E6D3; padding: 40px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="font-size: 1.6rem; margin-bottom: 20px; color: #654321;">Metalanguages</h3>
+                            <p style="color: #654321; line-height: 1.7;">Creating a language to describe another language - Pāṇini did it first!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Natural Language Processing -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Natural Language Processing (NLP)</h2>
+                    <p style="text-align: center; font-size: 1.3rem; color: #654321; margin-bottom: 40px;">Today's AI language models follow principles Pāṇini established</p>
+                    
+                    <div style="max-width: 1200px; margin: 0 auto;">
+                        <div class="nlp-applications" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px;">
+                            <div class="app-card" style="background: #F5E6D3; padding: 35px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                                <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #654321;">Chatbots</h3>
+                                <p style="color: #654321; line-height: 1.6;">Rule-based language understanding, just like Pāṇini's sūtras</p>
+                            </div>
+                            
+                            <div class="app-card" style="background: #FFF8DC; padding: 35px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                                <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #654321;">Machine Translation</h3>
+                                <p style="color: #654321; line-height: 1.6;">Google Translate uses grammatical rules similar to Pāṇini's framework</p>
+                            </div>
+                            
+                            <div class="app-card" style="background: #F5E6D3; padding: 35px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                                <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #654321;">Speech Recognition</h3>
+                                <p style="color: #654321; line-height: 1.6;">Siri & Alexa parse language using grammatical structures</p>
+                            </div>
+                        </div>
+                        
+                        <div class="modern-projects" style="background: #FFF8DC; padding: 40px; border: 2px solid #8B4513; border-radius: 5px;">
+                            <h3 style="font-size: 2rem; margin-bottom: 25px; text-align: center; color: #654321;">Active Research Projects</h3>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+                                <div style="background: #F5E6D3; padding: 25px; border: 1px solid #8B4513; border-radius: 3px;">
+                                    <h4 style="margin-bottom: 10px; color: #654321;">IIT Hyderabad</h4>
+                                    <p style="color: #654321;">Sanskrit Computational Linguistics Lab</p>
+                                </div>
+                                <div style="background: #F5E6D3; padding: 25px; border: 1px solid #8B4513; border-radius: 3px;">
+                                    <h4 style="margin-bottom: 10px; color: #654321;">Heidelberg University</h4>
+                                    <p style="color: #654321;">Sanskrit NLP Parser Development</p>
+                                </div>
+                                <div style="background: #F5E6D3; padding: 25px; border: 1px solid #8B4513; border-radius: 3px;">
+                                    <h4 style="margin-bottom: 10px; color: #654321;">JNU Delhi</h4>
+                                    <p style="color: #654321;">Pāṇinian Grammar for AI</p>
+                                </div>
+                                <div style="background: #F5E6D3; padding: 25px; border: 1px solid #8B4513; border-radius: 3px;">
+                                    <h4 style="margin-bottom: 10px; color: #654321;">Sanskrit Library Project</h4>
+                                    <p style="color: #654321;">Digital grammar engine based on Aṣṭādhyāyī</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Logic & Philosophy -->
+        <div class="slide" id="slide-8">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Mathematical Logic</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px; color: #654321;">Pāṇini's systematic approach influenced logical thinking itself</p>
+                    
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <img src="images/mathematical-equations.jpg" alt="Mathematical Equations" style="max-width: 100%; border: 3px solid var(--gold); border-radius: 10px; box-shadow: 0 8px 25px var(--shadow-brown);">
+                    </div>
+                    
+                    <div class="logic-principles" style="background: #F5E6D3; padding: 35px; border: 2px solid #8B4513; border-radius: 5px; max-width: 900px; margin: 0 auto;">
+                        <h3 style="color: #654321; margin-bottom: 25px; font-size: 1.8rem;">Key Contributions:</h3>
+                        
+                        <div class="principle-item" style="display: flex; gap: 20px; margin-bottom: 25px; align-items: start;">
+                            <div style="font-size: 2.5rem; color: #8B4513;">1</div>
+                            <div>
+                                <h4 style="color: #654321; margin-bottom: 10px;">Axiomatic System</h4>
+                                <p style="color: #654321; line-height: 1.6;">Start with basic axioms, derive everything else - sound familiar? It's the foundation of mathematics!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="principle-item" style="display: flex; gap: 20px; margin-bottom: 25px; align-items: start;">
+                            <div style="font-size: 2.5rem; color: #8B4513;">2</div>
+                            <div>
+                                <h4 style="color: #654321; margin-bottom: 10px;">Proof Theory</h4>
+                                <p style="color: #654321; line-height: 1.6;">Demonstrating that rules work through derivation - mathematical proofs work the same way!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="principle-item" style="display: flex; gap: 20px; align-items: start;">
+                            <div style="font-size: 2.5rem; color: #8B4513;">3</div>
+                            <div>
+                                <h4 style="color: #654321; margin-bottom: 10px;">Formal Systems</h4>
+                                <p style="color: #654321; line-height: 1.6;">Creating complete, self-contained logical systems - the basis of modern formal logic!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fun-fact-box" style="margin-top: 30px;">
+                        <div class="fact-icon">॥</div>
+                        <div class="fact-content">
+                            <h4>Academic Recognition</h4>
+                            <p>Pāṇini is studied in computer science, linguistics, philosophy, and mathematics departments worldwide!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Global Recognition -->
+        <div class="slide" id="slide-9">
+            <video class="hero-video" autoplay muted loop playsinline style="opacity: 0.15;">
+                <source src="videos/globe-connections.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <div class="slide-content" style="position: relative; z-index: 10;">
+                <div class="content-slide">
+                    <h2>Worldwide Recognition</h2>
+                    
+                    <div style="max-width: 1200px; margin: 40px auto;">
+                        <div class="recognition-items" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+                            <div style="background: #F5E6D3; padding: 40px; border: 2px solid #8B4513; border-radius: 5px;">
+                                <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #654321; text-align: center;">Universities</h3>
+                                <p style="color: #654321; line-height: 1.7; text-align: center;">Taught at Oxford, Harvard, Yale, Cambridge, and hundreds of institutions globally</p>
+                            </div>
+                            
+                            <div style="background: #FFF8DC; padding: 40px; border: 2px solid #8B4513; border-radius: 5px;">
+                                <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #654321; text-align: center;">Awards & Honors</h3>
+                                <p style="color: #654321; line-height: 1.7; text-align: center;">Multiple academic conferences, journals, and research centers named after him</p>
+                            </div>
+                            
+                            <div style="background: #FFF8DC; padding: 40px; border: 2px solid #8B4513; border-radius: 5px;">
+                                <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #654321; text-align: center;">Publications</h3>
+                                <p style="color: #654321; line-height: 1.7; text-align: center;">Thousands of research papers cite Pāṇini annually across multiple disciplines</p>
+                            </div>
+                            
+                            <div style="background: #F5E6D3; padding: 40px; border: 2px solid #8B4513; border-radius: 5px;">
+                                <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #654321; text-align: center;">Tech Industry</h3>
+                                <p style="color: #654321; line-height: 1.7; text-align: center;">Google, Microsoft, and IBM have teams studying Sanskrit for AI applications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Completion -->
+        <div class="slide" id="slide-10">
+            <div class="slide-content">
+                <div class="content-slide" style="text-align: center;">
+                    <h2>Chapter 3 Complete!</h2>
+                    <p style="font-size: 1.3rem; margin: 30px 0; color: #654321;">From ancient India to modern AI - Pāṇini's influence is everywhere!</p>
+                    
+                    <div class="chapter-summary" style="max-width: 800px; margin: 0 auto; text-align: left;">
+                        <div style="background: #F5E6D3; padding: 30px; border: 3px double #8B4513; border-radius: 5px; margin: 30px 0;">
+                            <h3 style="margin-bottom: 20px; color: #654321;">What You Discovered:</h3>
+                            <ul style="font-size: 1.2rem; line-height: 2; color: #654321;">
+                                <li>How Pāṇini influenced computer science (BNF, formal languages)</li>
+                                <li>NASA's research on Sanskrit for AI</li>
+                                <li>Chomsky's debt to Pāṇini's methods</li>
+                                <li>Modern NLP applications</li>
+                                <li>His impact on mathematical logic</li>
+                                <li>Worldwide academic recognition</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <button class="chapter-button" onclick="completeChapter(3)">
+                        Continue to Chapter 4
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="slide-nav">
+            <button class="nav-button" id="prev-btn" onclick="prevSlide()" disabled>← Previous</button>
+            <span class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">10</span>
+            </span>
+            <button class="nav-button" id="next-btn" onclick="nextSlide()">Next →</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+</body>
+</html>

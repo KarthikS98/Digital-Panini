@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Pāṇini - Digital Pāṇini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="panini.html" class="active">About Pāṇini</a>
+            <a href="learn.html">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html">Sūtra Reference</a>
+        </div>
+    </nav>
+
+    <div class="container hub-container">
+        <h1>Discover Pāṇini's Genius</h1>
+        <p class="subtitle">A guided journey through 2,500 years of linguistic brilliance</p>
+        
+        <!-- Overall Progress Bar -->
+        <div class="overall-progress">
+            <div class="progress-header">
+                <span class="progress-label">Your Progress</span>
+                <span class="progress-percentage" id="overall-percentage">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-text"><span id="chapters-completed">0</span> / 4 chapters completed</p>
+        </div>
+
+        <!-- Chapter Cards Grid -->
+        <div class="chapter-grid">
+            <!-- Chapter 1 -->
+            <div class="chapter-card" id="chapter-1" data-chapter="1">
+                <div class="chapter-number">Chapter 1</div>
+                <h2>Meet Pāṇini</h2>
+                <p class="chapter-description">
+                    Discover the man behind the world's first formal grammar. 
+                    Who was he? When did he live? Why does he matter?
+                </p>
+                <div class="chapter-footer">
+                    <span class="chapter-status" id="status-1">Start</span>
+                </div>
+            </div>
+
+            <!-- Chapter 2 -->
+            <div class="chapter-card locked" id="chapter-2" data-chapter="2">
+                <div class="chapter-number">Chapter 2</div>
+                <h2>The Aṣṭādhyāyī</h2>
+                <p class="chapter-description">
+                    Explore the structure, method, and genius of the "Eight Chapters". 
+                    How does the system work?
+                </p>
+                <div class="chapter-footer">
+                    <span class="chapter-status" id="status-2">Locked</span>
+                </div>
+            </div>
+
+            <!-- Chapter 3 -->
+            <div class="chapter-card locked" id="chapter-3" data-chapter="3">
+                <div class="chapter-number">Chapter 3</div>
+                <h2>Modern Impact</h2>
+                <p class="chapter-description">
+                    Discover how 2,500-year-old ideas shaped computer science, 
+                    linguistics, and artificial intelligence.
+                </p>
+                <div class="chapter-footer">
+                    <span class="chapter-status" id="status-3">Locked</span>
+                </div>
+            </div>
+
+            <!-- Chapter 4 -->
+            <div class="chapter-card locked" id="chapter-4" data-chapter="4">
+                <div class="chapter-number">Chapter 4</div>
+                <h2>Famous Sūtras</h2>
+                <p class="chapter-description">
+                    Real examples from the Aṣṭādhyāyī explained simply. 
+                    See the rules that changed linguistics forever.
+                </p>
+                <div class="chapter-footer">
+                    <span class="chapter-status" id="status-4">Locked</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completion Celebration (hidden by default) -->
+        <div class="completion-celebration" id="celebration" style="display: none;">
+            <div class="celebration-content">
+                <h2>Congratulations!</h2>
+                <p>You've completed all 4 chapters!</p>
+                <p class="celebration-message">
+                    You now understand Pāṇini's revolutionary contribution to linguistics and computer science.
+                </p>
+                <a href="sandhi.html" class="celebration-btn">Try the Sandhi Playground →</a>
+            </div>
+        </div>
+
+        <!-- External Resources -->
+        <div class="external-resources">
+            <h3>Want to Dive Deeper?</h3>
+            <p>Explore academic resources and original texts</p>
+            <div class="resource-links">
+                <a href="https://en.wikipedia.org/wiki/Ashtadhyayi" target="_blank" class="resource-link">
+                    Wikipedia: Aṣṭādhyāyī
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Panini" target="_blank" class="resource-link">
+                    Wikipedia: Pāṇini
+                </a>
+                <a href="https://sa.wikisource.org/wiki/%E0%A4%85%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A4%BE%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AF%E0%A5%80" target="_blank" class="resource-link">
+                    Wikisource: Sanskrit Text
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas (for celebrations) -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+</body>
+</html>

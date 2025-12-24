@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Meet Pāṇini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="panini.html" class="active">About Pāṇini</a>
+            <a href="learn.html">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html">Sūtra Reference</a>
+        </div>
+    </nav>
+
+    <div class="story-container">
+        <!-- Slide 1: Hero Introduction -->
+        <div class="slide active" id="slide-1">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="videos/hero-intro-video.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <audio id="ambient-music" loop autoplay>
+                <source src="audio/ambient-sitar.mp3" type="audio/mp3">
+            </audio>
+            
+            <div class="hero-content">
+                <h1 class="fade-in">Pāṇini</h1>
+                <p class="subtitle fade-in">The Architect of Language</p>
+                <p class="fade-in">Journey back 2,500 years to discover the mind that revolutionized linguistics</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Timeline - Life and Times -->
+        <div class="slide" id="slide-2">
+            <video class="hero-video" autoplay muted loop playsinline style="opacity: 0.15;">
+                <source src="videos/ambient-nature-video.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <div class="slide-content" style="position: relative; z-index: 10;">
+                <div class="content-slide">
+                    <h2>The Life and Times of Pāṇini</h2>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-year">c. 500 BCE</h3>
+                                <h4>Birth in Śalātura</h4>
+                                <p>Born in the ancient town of Śalātura (modern-day Lahur) in the Gandhāra region, 
+                                   near the Indus River in present-day Pakistan. This was a period of great intellectual 
+                                   ferment in ancient India.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-year">Early Life</h3>
+                                <h4>Education in the Vedic Tradition</h4>
+                                <p>Studied under renowned teachers, immersing himself in the Vedic tradition. 
+                                   The precise recitation and transmission of Vedic texts demanded absolute linguistic accuracy.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-year">Mature Years</h3>
+                                <h4>Composition of the Aṣṭādhyāyī</h4>
+                                <p>Compiled his masterwork, the Aṣṭādhyāyī ("Eight Chapters"), 
+                                   a comprehensive system of 3,959 rules governing Sanskrit grammar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Historical Context</h3>
+                        <p>Pāṇini lived during the late Vedic period, when the Buddha and Mahāvīra were also active. 
+                           His work emerged from a tradition that valued precision, oral transmission, and systematic thought.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Geographic Context -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Gandhāra: The Cradle of Grammar</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; align-items: center;">
+                        <div style="text-align: center;">
+                            <img src="images/panini2.jpg" alt="Pāṇini Portrait" 
+                                 style="max-width: 100%; border: 3px solid var(--gold); border-radius: 10px; box-shadow: 0 8px 25px var(--shadow-brown);">
+                            <p style="margin-top: 15px; font-style: italic; color: var(--primary-brown);">Pāṇini, the Master Grammarian</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="images/gandhara-map.jpg" alt="Gandhara Region Map" 
+                                 style="max-width: 100%; border: 3px solid var(--gold); border-radius: 10px; box-shadow: 0 8px 25px var(--shadow-brown);">
+                            <p style="margin-top: 15px; font-style: italic; color: var(--primary-brown);">The Gandhāra Region</p>
+                        </div>
+                    </div>
+
+                    <div class="fact-grid">
+                        <div class="fact-card">
+                            <div class="fact-label">Region</div>
+                            <div class="fact-value">Gandhāra</div>
+                            <div class="fact-description">Ancient center of learning and culture</div>
+                        </div>
+
+                        <div class="fact-card">
+                            <div class="fact-label">Birthplace</div>
+                            <div class="fact-value">Śalātura</div>
+                            <div class="fact-description">Modern-day Lahur, Pakistan</div>
+                        </div>
+
+                        <div class="fact-card">
+                            <div class="fact-label">River</div>
+                            <div class="fact-value">Indus</div>
+                            <div class="fact-description">Near the great Indus River</div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Why Geography Mattered</h3>
+                        <p>Gandhāra was a crossroads of cultures, connecting India with Central Asia and beyond. 
+                           This intellectual hub fostered the systematic study of language, philosophy, and the Vedas. 
+                           The region's emphasis on oral tradition and precise memorization created the perfect environment 
+                           for Pāṇini's groundbreaking work.</p>
+                    </div>
+                    
+                    <div style="background: #FFF8DC; padding: 25px; border-left: 4px solid #8B4513; border-radius: 5px; margin-top: 25px;">
+                        <h4 style="color: #8B4513; margin-bottom: 10px; font-size: 1.2rem;">॥ Why This Location Was Key</h4>
+                        <p style="color: #654321; line-height: 1.7;">Multiple languages and dialects met here, creating urgent need for standardization. Without clear rules, Vedic texts risked corruption as they spread across diverse linguistic communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: The Name Pāṇini -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <div class="content-slide gradient-bg" style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(101, 67, 33, 0.9));">
+                    <h2 style="color: var(--gold);">Understanding the Name</h2>
+                    
+                    <div class="sanskrit">पाणिनि</div>
+                    <div class="meaning">(Pāṇini)</div>
+
+                    <audio id="name-audio" style="display:none;">
+                        <source src="audio/panini-name-pronunciation.mp3" type="audio/mp3">
+                    </audio>
+                    
+                    <button class="demo-button" onclick="document.getElementById('name-audio').play()">
+                        Hear the Name
+                    </button>
+
+                    <div class="info-grid" style="margin-top: 50px;">
+                        <div class="info-box" style="background: rgba(255,255,255,0.15); border-color: var(--gold);">
+                            <h3 style="color: var(--cream);">Patronymic</h3>
+                            <p style="color: var(--light-cream);">
+                                "Son of Paṇi" – following ancient Indian naming conventions where 
+                                a person's name often reflected their father's name.
+                            </p>
+                        </div>
+
+                        <div class="info-box" style="background: rgba(255,255,255,0.15); border-color: var(--gold);">
+                            <h3 style="color: var(--cream);">Also Known As</h3>
+                            <p style="color: var(--light-cream);">
+                                Dākṣīputra (son of Dakṣī), Śālāturīya (from Śalātura), 
+                                and Śālānakīya in various texts.
+                            </p>
+                        </div>
+
+                        <div class="info-box" style="background: rgba(255,255,255,0.15); border-color: var(--gold);">
+                            <h3 style="color: var(--cream);">Legacy</h3>
+                            <p style="color: var(--light-cream);">
+                                His single name has become synonymous with grammatical precision 
+                                and linguistic excellence across millennia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Problem He Solved -->
+        <div class="slide" id="slide-5">
+            <video class="hero-video" autoplay muted loop playsinline style="opacity: 0.3;">
+                <source src="videos/book-pages-turning.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <div class="slide-content">
+                <div style="position: relative; z-index: 10; color: white;">
+                    <h2 style="color: var(--gold); text-align: center; font-size: 3rem; margin-bottom: 60px;">
+                        The Problem: Language in Flux
+                    </h2>
+
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 50px; align-items: center;">
+                        <!-- Problem Side -->
+                        <div class="info-box" style="background: rgba(255,255,255,0.1); border: 3px solid rgba(220, 38, 38, 0.6);">
+                            <h3 style="color: #FCA5A5; font-size: 2rem;">Before Pāṇini</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin: 20px 0; font-size: 1.2rem;">Multiple dialects with no standardization</li>
+                                <li style="margin: 20px 0; font-size: 1.2rem;">Vedic texts at risk of corruption</li>
+                                <li style="margin: 20px 0; font-size: 1.2rem;">No systematic way to teach Sanskrit</li>
+                                <li style="margin: 20px 0; font-size: 1.2rem;">Oral tradition vulnerable to errors</li>
+                            </ul>
+                        </div>
+
+                        <!-- VS -->
+                        <div style="font-size: 3rem; color: var(--gold); font-weight: bold;">VS</div>
+
+                        <!-- Solution Side -->
+                        <div class="info-box" style="background: rgba(255,255,255,0.1); border: 3px solid rgba(34, 197, 94, 0.6);">
+                            <h3 style="color: #86EFAC; font-size: 2rem;">After Pāṇini</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin: 20px 0; font-size: 1.2rem;">Complete, systematic grammar in 3,959 rules</li>
+                                <li style="margin: 20px 0; font-size: 1.2rem;">Standard reference for correct Sanskrit</li>
+                                <li style="margin: 20px 0; font-size: 1.2rem;">Algorithmic method that generates correct forms</li>
+                                <li style="margin: 20px 0; font-size: 1.2rem;">Preservation of linguistic precision</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255, 248, 220, 0.95); padding: 30px; border-left: 4px solid #D4AF37; border-radius: 5px; margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                        <h4 style="color: #8B4513; margin-bottom: 15px; font-size: 1.3rem;">॥ Why This Revolution Was Needed</h4>
+                        <p style="color: #654321; line-height: 1.8; font-size: 1.1rem;"><strong>WHO:</strong> Vedic priests needed perfect recitation across generations<br>
+                        <strong>WHAT:</strong> Language was changing naturally, threatening sacred text accuracy<br>
+                        <strong>WHY:</strong> A single mistake in pronunciation could change a ritual's meaning entirely</p>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 30px; background: rgba(212, 175, 55, 0.2); border-color: var(--gold);">
+                        <p style="font-size: 1.3rem; text-align: center; color: var(--cream); font-style: italic;">
+                            "Pāṇini didn't just describe Sanskrit – he created a generative system that could produce every valid 
+                            Sanskrit word and sentence from a finite set of rules. This was computational thinking 2,500 years 
+                            before computers."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: What Made Him Special -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>What Made Pāṇini Extraordinary?</h2>
+
+                    <div class="fact-grid">
+                        <div class="fact-card">
+                            <div class="fact-label">Revolutionary Method</div>
+                            <p style="margin-top: 15px; font-size: 1.1rem;">
+                                Created the world's first formal language – 
+                                a meta-language to describe Sanskrit with mathematical precision.
+                            </p>
+                        </div>
+
+                        <div class="fact-card">
+                            <div class="fact-label">Computational Genius</div>
+                            <p style="margin-top: 15px; font-size: 1.1rem;">
+                                Invented recursive rules, null operators, and context-sensitive transformations – 
+                                concepts that would resurface in computer science 2,500 years later.
+                            </p>
+                        </div>
+
+                        <div class="fact-card">
+                            <div class="fact-label">Maximum Compactness</div>
+                            <p style="margin-top: 15px; font-size: 1.1rem;">
+                                Achieved extreme brevity through technical devices like pratyāhāra (sound-class symbols) 
+                                and IT markers (zero morphemes).
+                            </p>
+                        </div>
+
+                        <div class="fact-card">
+                            <div class="fact-label">Complete Coverage</div>
+                            <p style="margin-top: 15px; font-size: 1.1rem;">
+                                Described Sanskrit so thoroughly that his 3,959 rules can generate an infinite number 
+                                of grammatically correct expressions.
+                            </p>
+                        </div>
+
+                        <div class="fact-card">
+                            <div class="fact-label">Scientific Approach</div>
+                            <p style="margin-top: 15px; font-size: 1.1rem;">
+                                Treated language as a formal system, anticipating modern linguistics, formal language 
+                                theory, and even programming language design.
+                            </p>
+                        </div>
+
+                        <div class="fact-card">
+                            <div class="fact-label">Lasting Impact</div>
+                            <p style="margin-top: 15px; font-size: 1.1rem;">
+                                Remains the foundation of Sanskrit learning for 2,500 years. NASA and computer scientists 
+                                have studied his methods for AI and natural language processing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="quote-box" style="margin-top: 60px;">
+                        <p class="quote-text">
+                            "One of the greatest monuments of human intelligence."
+                        </p>
+                        <p class="quote-author">— Leonard Bloomfield, Linguist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Legacy and Influence -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>A Legacy That Transcends Time</h2>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin: 50px 0;">
+                        <div class="info-box">
+                            <h3>Ancient Impact</h3>
+                            <ul>
+                                <li>Foundation of Sanskrit education for 2,500+ years</li>
+                                <li>Influenced Buddhist and Jain grammatical traditions</li>
+                                <li>Enabled precise preservation of Vedic literature</li>
+                                <li>Inspired philosophical schools (Vyākaraṇa, Mīmāṃsā)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h3>Modern Relevance</h3>
+                            <ul>
+                                <li>Influenced formal language theory (Noam Chomsky)</li>
+                                <li>Studied by NASA for AI research (Rick Briggs, 1985)</li>
+                                <li>Foundational for natural language processing</li>
+                                <li>Model for programming language syntax design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin: 50px 0;">
+                        <img src="images/ancient-india-landscape.jpg" alt="Ancient India" 
+                             style="max-width: 100%; border: 3px solid var(--gold); border-radius: 10px; box-shadow: 0 8px 25px var(--shadow-brown);">
+                    </div>
+
+                    <div class="quote-box">
+                        <p class="quote-text">
+                            "The Aṣṭādhyāyī is a generative grammar par excellence. It is systematic, comprehensive, 
+                            and economical. It generates the infinite set of Sanskrit words and sentences."
+                        </p>
+                        <p class="quote-author">— Paul Kiparsky, Stanford University</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Completion Slide -->
+        <div class="slide" id="slide-8">
+            <div class="completion-slide">
+                <h2>Chapter 1 Complete!</h2>
+                <p>
+                    You've learned about Pāṇini – the man, his times, and why his work matters. 
+                    You now understand the historical and intellectual context that produced the world's 
+                    first formal grammar.
+                </p>
+                <p style="margin-top: 30px; font-size: 1.1rem;">
+                    Next, we'll dive into the Aṣṭādhyāyī itself and explore how his system actually works.
+                </p>
+                <button class="chapter-button" onclick="completeChapter(1)">
+                    Continue to Chapter 2
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="slide-nav">
+            <button class="nav-button" id="prev-btn" onclick="prevSlide()" disabled>← Previous</button>
+            <span class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">8</span>
+            </span>
+            <button class="nav-button" id="next-btn" onclick="nextSlide()">Next →</button>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+</body>
+</html>

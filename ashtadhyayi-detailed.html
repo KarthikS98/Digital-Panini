@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Aṣṭādhyāyī Reference - Digital Pāṇini</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .attribution-info {
+            background: rgba(245, 230, 211, 0.15);
+            padding: 6px 12px;
+            border-radius: 5px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem;
+            color: #F5E6D3;
+            margin-left: 20px;
+        }
+
+        .attribution-link {
+            color: #D4AF37;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .attribution-link:hover {
+            text-decoration: underline;
+        }
+
+        .iframe-container {
+            position: fixed;
+            top: 75px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: none;
+        }
+
+        .content-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 75px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #F5E6D3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-text {
+            color: #654321;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #D4AF37;
+            border-top: 5px solid #8B4513;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .credits-footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(139, 69, 19, 0.9);
+            color: #F5E6D3;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            z-index: 1001;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-navigation {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: #D4AF37;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            text-decoration: none;
+            display: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-navigation:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.5);
+        }
+
+        .back-navigation.visible {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="panini.html">About Pāṇini</a>
+            <a href="learn.html">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html" class="active">Sūtra Reference</a>
+            <span class="attribution-info">
+                Source: <a href="https://ashtadhyayi.com/" target="_blank" class="attribution-link">ashtadhyayi.com</a>
+            </span>
+        </div>
+    </nav>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading Sūtra Database...</p>
+    </div>
+
+    <div class="iframe-container">
+        <iframe 
+            src="" 
+            class="content-iframe"
+            id="contentFrame"
+            title="Ashtadhyayi Complete Reference"
+            onload="hideLoading()">
+        </iframe>
+    </div>
+
+    <div class="credits-footer">
+        Website by Digital Pāṇini Team
+    </div>
+
+    <a href="#" class="back-navigation" id="backButton" onclick="goBack(); return false;">
+        ← Back to Sandhi Playground
+    </a>
+
+    <script>
+        // Check if there's a sutra parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sutra = urlParams.get('sutra');
+        const dhatu = urlParams.get('dhatu');
+        const pratyaya = urlParams.get('pratyaya');
+        const from = urlParams.get('from');
+        
+        const iframe = document.getElementById('contentFrame');
+        const backButton = document.getElementById('backButton');
+        
+        // Show back button if coming from sandhi or if there's history
+        if (from === 'sandhi' || document.referrer.includes('sandhi.html')) {
+            backButton.classList.add('visible');
+            backButton.textContent = '← Back to Sandhi Playground';
+        } else if (from === 'dhatu' || document.referrer.includes('dhatu.html')) {
+            backButton.classList.add('visible');
+            backButton.textContent = '← Back to Dhātu Explorer';
+        } else if (from === 'pratyaya' || document.referrer.includes('pratyaya.html')) {
+            backButton.classList.add('visible');
+            backButton.textContent = '← Back to Pratyaya Explorer';
+        } else if (document.referrer && document.referrer.includes(window.location.hostname)) {
+            backButton.classList.add('visible');
+            backButton.textContent = '← Back';
+        }
+        
+        function goBack() {
+            // Try to go back in history if available
+            if (window.history.length > 1) {
+                window.history.back();
+            } else if (from === 'sandhi' || document.referrer.includes('sandhi.html')) {
+                // Fallback to sandhi page
+                window.location.href = 'sandhi.html';
+            } else if (from === 'dhatu' || document.referrer.includes('dhatu.html')) {
+                // Fallback to dhatu page
+                window.location.href = 'dhatu.html';
+            } else if (from === 'pratyaya' || document.referrer.includes('pratyaya.html')) {
+                // Fallback to pratyaya page
+                window.location.href = 'pratyaya.html';
+            } else {
+                // Fallback to learn grammar page
+                window.location.href = 'learn.html';
+            }
+        }
+        
+        if (dhatu) {
+            // Load specific dhatu page
+            const cleanDhatu = dhatu.trim();
+            iframe.src = `https://ashtadhyayi.com/dhatu/${cleanDhatu}`;
+            console.log('Loading dhatu:', cleanDhatu);
+        } else if (pratyaya) {
+            // Load specific pratyaya/sutra page
+            const cleanPratyaya = pratyaya.trim();
+            iframe.src = `https://ashtadhyayi.com/sutra/${cleanPratyaya}`;
+            console.log('Loading pratyaya sutra:', cleanPratyaya);
+        } else if (sutra) {
+            // Clean and validate the sutra parameter
+            const cleanSutra = sutra.trim();
+            
+            // Ensure it's in the correct format (X/X/X or X.X.X)
+            const sutraPath = cleanSutra.replace(/\./g, '/');
+            
+            // Set iframe src before it loads
+            iframe.src = `https://ashtadhyayi.com/sutraani/${sutraPath}`;
+            
+            console.log('Loading sutra:', sutraPath);
+        } else {
+            // Load home page if no sutra specified
+            iframe.src = 'https://ashtadhyayi.com/';
+        }
+
+        function hideLoading() {
+            const overlay = document.getElementById('loadingOverlay');
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 500);
+        }
+
+        // Hide loading after 5 seconds as fallback
+        setTimeout(() => {
+            const overlay = document.getElementById('loadingOverlay');
+            if (!overlay.classList.contains('hidden')) {
+                overlay.classList.add('hidden');
+            }
+        }, 5000);
+    </script>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+</body>
+</html>

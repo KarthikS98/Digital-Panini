@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Pāṇini</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5E6D3 100%);
+            padding: 80px 60px 60px;
+            margin-top: -60px;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            padding-right: 40px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            color: #654321;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.1);
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: #8B4513;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: #654321;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .hero-highlight {
+            background: rgba(212, 175, 55, 0.15);
+            border-left: 4px solid #D4AF37;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            color: #654321;
+            font-style: italic;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-placeholder {
+            width: 100%;
+            max-width: 650px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .visual-placeholder img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(139, 69, 19, 0.4);
+            border: 5px solid #D4AF37;
+        }
+
+        .placeholder-text {
+            font-size: 8rem;
+            color: #D4AF37;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .placeholder-label {
+            font-size: 1.3rem;
+            color: #F5E6D3;
+            margin-top: 15px;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        /* Feature Cards Section */
+        .features-section {
+            padding: 80px 60px;
+            background: var(--cream);
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #654321;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #8B4513;
+            margin-bottom: 60px;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5E6D3 100%);
+            border: 3px solid #8B4513;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            transition: all 0.5s ease;
+            transform: scale(0);
+        }
+
+        .feature-card:hover::before {
+            transform: scale(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.35);
+            border-color: #D4AF37;
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .feature-title {
+            font-size: 1.6rem;
+            color: #654321;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #8B4513;
+            line-height: 1.7;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-text {
+                padding-right: 0;
+            }
+
+            .visual-placeholder {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="panini.html">About Pāṇini</a>
+            <a href="learn.html">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html">Sūtra Reference</a>
+        </div>
+    </nav>
+
+    <!-- Welcome Modal for First-Time Visitors -->
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="modal-overlay" onclick="closeWelcomeModal()"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>🙏 Namaste! Welcome to Digital Pāṇini</h2>
+                <p class="modal-subtitle">Your Gateway to Ancient Sanskrit Wisdom</p>
+            </div>
+            
+            <div class="modal-body">
+                <p class="modal-intro">
+                    Discover the world's most systematic grammar through an interactive digital platform.
+                    Here's what awaits you:
+                </p>
+                
+                <div class="modal-features">
+                    <div class="modal-feature-item">
+                        <span class="feature-icon">📖</span>
+                        <div class="feature-content">
+                            <h3>About Pāṇini & Aṣṭādhyāyī</h3>
+                            <p>Explore the life of the ancient grammarian and understand the structure of his timeless work.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-feature-item">
+                        <span class="feature-icon">🎓</span>
+                        <div class="feature-content">
+                            <h3>Interactive Grammar Tools</h3>
+                            <p>Master <strong>Sandhi</strong> (phonetic combinations), <strong>Dhātu</strong> (verbal roots), and <strong>Pratyaya</strong> (suffixes) through hands-on exploration.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <div class="feature-content">
+                            <h3>Practice & Experiment</h3>
+                            <p>Use the Sandhi Playground to practice phonetic transformations and see grammar rules come alive.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-feature-item">
+                        <span class="feature-icon">📚</span>
+                        <div class="feature-content">
+                            <h3>Sūtra Reference Library</h3>
+                            <p>Access detailed explanations of Pāṇini's rules (sūtras) integrated from authoritative sources.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer-note">
+                    <p>
+                        <strong>📌 Academic Note:</strong> This is a student-developed educational platform created as part of the 
+                        Indian Knowledge Systems (IKS) curriculum. All content is designed for learning and research purposes.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="modal-btn-primary" onclick="closeWelcomeModal()">Start Exploring →</button>
+                <button class="modal-btn-secondary" onclick="closeWelcomeModal()">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1 class="hero-title">Digital Pāṇini</h1>
+                <p class="hero-tagline">Master the World's Most Systematic Grammar</p>
+                <p class="hero-description">
+                    2,500 years ago, the ancient grammarian Pāṇini created a revolutionary rule-based system 
+                    to describe the entire Sanskrit language—a feat unmatched in linguistic history.
+                </p>
+                <div class="hero-highlight">
+                    ॥ Discover the elegance of Pāṇini's Aṣṭādhyāyī through interactive learning, 
+                    step-by-step exploration, and hands-on grammar tools. ॥
+                </div>
+                <p class="hero-description">
+                    Whether you're a beginner or a scholar, explore phonetics, sandhi rules, 
+                    sūtras, and the timeless principles that make Sanskrit so precise and beautiful.
+                </p>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-placeholder">
+                    <img src="images/panini1.jpg" alt="Pāṇini - Master Grammarian">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Cards Section -->
+    <section class="features-section">
+        <div class="features-container">
+            <h2 class="features-title">Explore the Grammar System</h2>
+            <p class="features-subtitle">Choose your path to understanding Pāṇini's masterwork</p>
+
+            <div class="feature-cards">
+                <a href="panini.html" class="feature-card">
+                    <span class="feature-icon">🧘</span>
+                    <h3 class="feature-title">About Pāṇini</h3>
+                    <p class="feature-description">
+                        Meet the ancient linguist who revolutionized grammar. 
+                        Journey through his life, legacy, and timeless influence.
+                    </p>
+                </a>
+
+                <a href="chapter2-ashtadhyayi.html" class="feature-card">
+                    <span class="feature-icon">📖</span>
+                    <h3 class="feature-title">Structure of Aṣṭādhyāyī</h3>
+                    <p class="feature-description">
+                        Explore the 8 chapters and 4,000 sūtras that form 
+                        the most comprehensive grammar ever written.
+                    </p>
+                </a>
+
+                <a href="chapter4-famous-sutras.html" class="feature-card">
+                    <span class="feature-icon">✨</span>
+                    <h3 class="feature-title">Famous Sūtras</h3>
+                    <p class="feature-description">
+                        Dive into the most influential rules—vṛddhi, sandhi, 
+                        laṭ—that define Sanskrit's elegance.
+                    </p>
+                </a>
+
+                <a href="learn.html" class="feature-card">
+                    <span class="feature-icon">🎓</span>
+                    <h3 class="feature-title">Interactive Grammar Tools</h3>
+                    <p class="feature-description">
+                        Practice sandhi rules, explore dhātu roots, and 
+                        master pratyaya suffixes through hands-on tools.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Disclaimer Section -->
+    <section class="disclaimer-section">
+        <div class="disclaimer-container">
+            <h2 class="disclaimer-title">About This Project</h2>
+            <div class="disclaimer-content">
+                <p>
+                    <strong>Digital Pāṇini</strong> is a non-commercial, educational project developed as part of an academic submission 
+                    for the Indian Knowledge Systems (IKS) curriculum. This platform is designed to make classical Sanskrit grammar 
+                    accessible through interactive digital tools.
+                </p>
+                <p>
+                    The content and structure of this website are inspired by the classical texts of Pāṇini's Aṣṭādhyāyī and traditional 
+                    Sanskrit grammar treatises. External references to <a href="https://ashtadhyayi.com" target="_blank" rel="noopener">ashtadhyayi.com</a> 
+                    are credited and used for educational purposes.
+                </p>
+                <p class="disclaimer-highlight">
+                    This website represents original student work, built from the ground up as an independent learning platform.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Welcome Modal Logic - Show only on first visit
+        function showWelcomeModal() {
+            const modal = document.getElementById('welcomeModal');
+            if (modal) {
+                modal.classList.add('show');
+                // Prevent body scroll when modal is open
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeWelcomeModal() {
+            const modal = document.getElementById('welcomeModal');
+            if (modal) {
+                modal.classList.remove('show');
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+                // Mark as visited in localStorage
+                localStorage.setItem('digitalPaniniVisited', 'true');
+            }
+        }
+        
+        // Check if this is user's first visit
+        window.addEventListener('DOMContentLoaded', function() {
+            const hasVisited = localStorage.getItem('digitalPaniniVisited');
+            if (!hasVisited) {
+                // Delay modal slightly for better UX
+                setTimeout(showWelcomeModal, 500);
+            }
+        });
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeWelcomeModal();
+            }
+        });
+    </script>
+</body>
+</html>

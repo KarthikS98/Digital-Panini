@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhātu - Digital Pāṇini</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dhatu-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5E6D3 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #D4AF37;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            color: #654321;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            color: #8B4513;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .search-section {
+            background: #F5E6D3;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #8B4513;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background: white;
+            border: 2px solid #8B4513;
+            border-radius: 6px;
+            color: #654321;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #D4AF37;
+            color: white;
+            border-color: #D4AF37;
+        }
+
+        .dhatu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .dhatu-card {
+            background: #FFF8DC;
+            border: 2px solid #8B4513;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dhatu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+            border-color: #D4AF37;
+        }
+
+        .dhatu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .dhatu-root {
+            font-size: 1.6rem;
+            color: #654321;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+        }
+
+        .dhatu-class {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #8B4513;
+            font-weight: 600;
+        }
+
+        .dhatu-meaning {
+            color: #8B4513;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .dhatu-examples {
+            background: rgba(139, 69, 19, 0.05);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        .dhatu-examples-title {
+            font-size: 0.85rem;
+            color: #654321;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .example-word {
+            display: inline-block;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 4px;
+            font-size: 0.9rem;
+            color: #8B4513;
+            border: 1px solid #8B4513;
+        }
+
+        .conjugation-preview {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(139, 69, 19, 0.2);
+        }
+
+        .conjugation-title {
+            font-size: 0.85rem;
+            color: #654321;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .conjugation-forms {
+            font-size: 0.9rem;
+            color: #8B4513;
+            line-height: 1.6;
+        }
+
+        .learn-more-btn {
+            display: block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #D4AF37;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3);
+        }
+
+        .learn-more-btn:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8B4513;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .dhatu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="panini.html">About Pāṇini</a>
+            <a href="learn.html" class="active">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html">Sūtra Reference</a>
+        </div>
+    </nav>
+
+    <div class="container dhatu-container">
+        <h1>Dhātu (धातु)</h1>
+        <p class="subtitle">The Building Blocks of Sanskrit Verbs</p>
+        
+        <!-- Introduction -->
+        <div class="intro-section">
+            <h2>What is a Dhātu?</h2>
+            <p>
+                A <strong>dhātu</strong> (root) is the irreducible core of a verb—the seed from which all verb forms grow. 
+                Pāṇini identified over 2,000 roots, each carrying a fundamental meaning. 
+                By adding suffixes and applying rules, these roots transform into complete words.
+            </p>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by root or meaning (e.g., भू or 'to be')...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Roots</button>
+                <button class="filter-btn" data-filter="common">Most Common</button>
+                <button class="filter-btn" data-filter="bhvadi">Bhvādi (Class 1)</button>
+                <button class="filter-btn" data-filter="adadi">Adādi (Class 2)</button>
+                <button class="filter-btn" data-filter="divadi">Divādi (Class 4)</button>
+            </div>
+        </div>
+
+        <!-- Dhatu Grid -->
+        <div class="dhatu-grid" id="dhatuGrid">
+            <!-- Cards will be generated by JavaScript -->
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            No roots found matching your search.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Dhātu Database (Common roots)
+        const dhatuDatabase = [
+            { root: '√भू', transliteration: 'bhū', meaning: 'to be, to become', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['भवति (bhavati) - is/becomes', 'भूत (bhūta) - been/was'], conjugation: 'भवति, भवतः, भवन्ति', dhatuId: '01.0001' },
+            { root: '√गम्', transliteration: 'gam', meaning: 'to go', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['गच्छति (gacchati) - goes', 'गत (gata) - gone'], conjugation: 'गच्छति, गच्छतः, गच्छन्ति', dhatuId: '01.0463' },
+            { root: '√कृ', transliteration: 'kṛ', meaning: 'to do, to make', class: 'tanadi', className: 'Tanādi (8)', common: true, examples: ['करोति (karoti) - does', 'कृत (kṛta) - done'], conjugation: 'करोति, कुरुतः, कुर्वन्ति', dhatuId: '08.0010' },
+            { root: '√अस्', transliteration: 'as', meaning: 'to be, to exist', class: 'adadi', className: 'Adādi (2)', common: true, examples: ['अस्ति (asti) - is', 'आसीत् (āsīt) - was'], conjugation: 'अस्ति, स्तः, सन्ति', dhatuId: '02.0060' },
+            { root: '√दा', transliteration: 'dā', meaning: 'to give', class: 'juhotyadi', className: 'Juhotyādi (3)', common: true, examples: ['ददाति (dadāti) - gives', 'दत्त (datta) - given'], conjugation: 'ददाति, दत्तः, ददति', dhatuId: '03.0010' },
+            { root: '√पा', transliteration: 'pā', meaning: 'to drink, to protect', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['पिबति (pibati) - drinks', 'पीत (pīta) - drunk'], conjugation: 'पिबति, पिबतः, पिबन्ति', dhatuId: '01.1075' },
+            { root: '√स्था', transliteration: 'sthā', meaning: 'to stand, to stay', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['तिष्ठति (tiṣṭhati) - stands', 'स्थित (sthita) - stood'], conjugation: 'तिष्ठति, तिष्ठतः, तिष्ठन्ति', dhatuId: '01.1077' },
+            { root: '√दृश्', transliteration: 'dṛś', meaning: 'to see', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['पश्यति (paśyati) - sees', 'दृष्ट (dṛṣṭa) - seen'], conjugation: 'पश्यति, पश्यतः, पश्यन्ति', dhatuId: '01.1143' },
+            { root: '√वद्', transliteration: 'vad', meaning: 'to speak, to say', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['वदति (vadati) - speaks', 'उक्त (ukta) - said'], conjugation: 'वदति, वदतः, वदन्ति', dhatuId: '01.1164' },
+            { root: '√लभ्', transliteration: 'labh', meaning: 'to obtain, to get', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['लभते (labhate) - obtains', 'लब्ध (labdha) - obtained'], conjugation: 'लभते, लभेते, लभन्ते', dhatuId: '01.1130' },
+            { root: '√ज्ञा', transliteration: 'jñā', meaning: 'to know', class: 'kryadi', className: 'Kryādi (9)', common: true, examples: ['जानाति (jānāti) - knows', 'ज्ञात (jñāta) - known'], conjugation: 'जानाति, जानीतः, जानन्ति', dhatuId: '09.0040' },
+            { root: '√नी', transliteration: 'nī', meaning: 'to lead, to take', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['नयति (nayati) - leads', 'नीत (nīta) - led'], conjugation: 'नयति, नयतः, नयन्ति', dhatuId: '01.1049' },
+            { root: '√खाद्', transliteration: 'khād', meaning: 'to eat', class: 'bhvadi', className: 'Bhvādi (1)', common: false, examples: ['खादति (khādati) - eats', 'खादित (khādita) - eaten'], conjugation: 'खादति, खादतः, खादन्ति', dhatuId: '01.0011' },
+            { root: '√लिख्', transliteration: 'likh', meaning: 'to write', class: 'bhvadi', className: 'Bhvādi (1)', common: false, examples: ['लिखति (likhati) - writes', 'लिखित (likhita) - written'], conjugation: 'लिखति, लिखतः, लिखन्ति', dhatuId: '01.0633' },
+            { root: '√पठ्', transliteration: 'paṭh', meaning: 'to read, to recite', class: 'bhvadi', className: 'Bhvādi (1)', common: false, examples: ['पठति (paṭhati) - reads', 'पठित (paṭhita) - read'], conjugation: 'पठति, पठतः, पठन्ति', dhatuId: '01.0674' },
+            { root: '√युध्', transliteration: 'yudh', meaning: 'to fight', class: 'divadi', className: 'Divādi (4)', common: false, examples: ['युध्यति (yudhyati) - fights', 'युद्ध (yuddha) - fought'], conjugation: 'युध्यति, युध्यतः, युध्यन्ति', dhatuId: '04.0069' },
+            { root: '√श्रु', transliteration: 'śru', meaning: 'to hear, to listen', class: 'bhvadi', className: 'Bhvādi (1)', common: true, examples: ['शृणोति (śṛṇoti) - hears', 'श्रुत (śruta) - heard'], conjugation: 'शृणोति, शृणुतः, शृण्वन्ति', dhatuId: '01.1096' },
+            { root: '√हन्', transliteration: 'han', meaning: 'to kill, to strike', class: 'adadi', className: 'Adādi (2)', common: false, examples: ['हन्ति (hanti) - kills', 'हत (hata) - killed'], conjugation: 'हन्ति, हतः, घ्नन्ति', dhatuId: '02.0002' }
+        ];
+
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        // Initialize
+        renderDhatus();
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchTerm = e.target.value.toLowerCase();
+            renderDhatus();
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderDhatus();
+            });
+        });
+
+        function renderDhatus() {
+            const grid = document.getElementById('dhatuGrid');
+            const noResults = document.getElementById('noResults');
+            
+            // Filter dhatus
+            let filtered = dhatuDatabase.filter(dhatu => {
+                // Apply class filter
+                if (currentFilter !== 'all') {
+                    if (currentFilter === 'common' && !dhatu.common) return false;
+                    if (currentFilter !== 'common' && dhatu.class !== currentFilter) return false;
+                }
+                
+                // Apply search filter
+                if (searchTerm) {
+                    return dhatu.root.toLowerCase().includes(searchTerm) ||
+                           dhatu.transliteration.toLowerCase().includes(searchTerm) ||
+                           dhatu.meaning.toLowerCase().includes(searchTerm);
+                }
+                
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+
+            grid.innerHTML = filtered.map(dhatu => `
+                <div class="dhatu-card">
+                    <div class="dhatu-header">
+                        <span class="dhatu-root">${dhatu.root}</span>
+                        <span class="dhatu-class">${dhatu.className}</span>
+                    </div>
+                    <div class="dhatu-meaning">"${dhatu.meaning}"</div>
+                    <div class="dhatu-examples">
+                        <div class="dhatu-examples-title">Common Forms:</div>
+                        ${dhatu.examples.map(ex => `<span class="example-word">${ex}</span>`).join('')}
+                    </div>
+                    <div class="conjugation-preview">
+                        <div class="conjugation-title">Present Tense (3rd person):</div>
+                        <div class="conjugation-forms">${dhatu.conjugation}</div>
+                    </div>
+                    <a href="ashtadhyayi-detailed.html?dhatu=${dhatu.dhatuId}&from=dhatu" class="learn-more-btn">
+                        View Complete Analysis →
+                    </a>
+                </div>
+            `).join('');
+        }
+    </script>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+</body>
+</html>

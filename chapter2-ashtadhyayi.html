@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: The Aṣṭādhyāyī</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="panini.html" class="active">About Pāṇini</a>
+            <a href="learn.html">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html">Sūtra Reference</a>
+        </div>
+    </nav>
+
+    <div class="story-container">
+        <!-- Slide 1: Hero Introduction -->
+        <div class="slide active" id="slide-1">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="videos/book-pages-turning.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <audio id="ambient-music" loop autoplay>
+                <source src="audio/ambient-sitar.mp3" type="audio/mp3">
+            </audio>
+            
+            <div class="hero-content">
+                <h1 class="fade-in">The Aṣṭādhyāyī</h1>
+                <p class="subtitle fade-in">अष्टाध्यायी</p>
+                <p class="fade-in">The Most Comprehensive Grammar Ever Written</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Name Breakdown -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>What Does "Aṣṭādhyāyī" Mean?</h2>
+                    
+                    <div class="devanagari-showcase">
+                        <div class="word-breakdown" style="display: flex; align-items: center; justify-content: center; gap: 40px; margin: 60px 0;">
+                            <div class="word-part" style="text-align: center;">
+                                <div style="font-size: 5rem; color: #8B4513; margin-bottom: 15px;">अष्ट</div>
+                                <div style="font-size: 2rem; color: #654321; margin-bottom: 10px;">aṣṭa</div>
+                                <div style="font-size: 1.5rem; background: #F5E6D3; padding: 15px 30px; border: 2px solid #8B4513; border-radius: 5px;">"Eight"</div>
+                            </div>
+                            <div style="font-size: 4rem; color: #8B4513;">+</div>
+                            <div class="word-part" style="text-align: center;">
+                                <div style="font-size: 5rem; color: #8B4513; margin-bottom: 15px;">अध्याय</div>
+                                <div style="font-size: 2rem; color: #654321; margin-bottom: 10px;">adhyāya</div>
+                                <div style="font-size: 1.5rem; background: #F5E6D3; padding: 15px 30px; border: 2px solid #8B4513; border-radius: 5px;">"Chapter"</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fun-fact-box">
+                        <div class="fact-icon">॥</div>
+                        <div class="fact-content">
+                            <h3>The Book of Eight Chapters</h3>
+                            <p>A systematic treatise containing the complete rules of Sanskrit grammar</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #FFF8DC; padding: 25px; border-left: 4px solid #8B4513; border-radius: 5px; margin-top: 25px;">
+                        <h4 style="color: #8B4513; margin-bottom: 10px; font-size: 1.2rem;">॥ Why Eight Chapters?</h4>
+                        <p style="color: #654321; line-height: 1.7;">Organized by topic progression: sounds → word formation → sentence construction. Each chapter builds on previous ones, like a programming language specification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Structure Overview -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>The Architecture</h2>
+                    
+                    <div class="structure-pyramid" style="max-width: 1000px; margin: 40px auto;">
+                        <div class="pyramid-level" style="text-align: center; margin-bottom: 40px;">
+                            <div style="background: #F5E6D3; padding: 30px; border: 3px double #8B4513; border-radius: 10px;">
+                                <h3 style="font-size: 2rem; margin-bottom: 10px; color: #654321;">1 Complete Text</h3>
+                                <p style="color: #8B4513;">The Aṣṭādhyāyī</p>
+                            </div>
+                        </div>
+                        <div style="font-size: 3rem; text-align: center; margin: 30px 0; color: #8B4513;">↓</div>
+                        <div class="pyramid-level" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px;">
+                            <div style="text-align: center;">
+                                <div style="background: #FFF8DC; padding: 30px; border: 2px solid #8B4513; border-radius: 10px;">
+                                    <div style="font-size: 2.5rem; margin-bottom: 10px; color: #654321;">8</div>
+                                    <h3 style="font-size: 1.8rem; color: #8B4513;">Chapters</h3>
+                                    <p style="color: #654321;">(Adhyāya)</p>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="background: #FFF8DC; padding: 30px; border: 2px solid #8B4513; border-radius: 10px;">
+                                    <div style="font-size: 2.5rem; margin-bottom: 10px; color: #654321;">32</div>
+                                    <h3 style="font-size: 1.8rem; color: #8B4513;">Quarters</h3>
+                                    <p style="color: #654321;">(Pāda) - 4 per chapter</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-size: 3rem; text-align: center; margin: 30px 0; color: #8B4513;">↓</div>
+                        <div style="text-align: center;">
+                            <div style="background: #F5E6D3; padding: 40px; border: 3px double #8B4513; border-radius: 10px;">
+                                <h3 style="font-size: 2.5rem; margin-bottom: 10px; color: #654321;">3,959 Sūtras</h3>
+                                <p style="font-size: 1.3rem; color: #8B4513;">Individual rules that generate all of Sanskrit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Numbers Visualization -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>By The Numbers</h2>
+                    
+                    <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px;">
+                        <div class="stat-card" style="background: #F5E6D3; padding: 40px; border: 2px solid #8B4513; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 5rem; margin-bottom: 20px; color: #654321;">3,959</div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px; color: #8B4513;">Sūtras</h3>
+                            <p style="color: #654321;">Compact grammatical rules</p>
+                        </div>
+                        <div class="stat-card" style="background: #FFF8DC; padding: 40px; border: 2px solid #8B4513; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 5rem; margin-bottom: 20px; color: #654321;">~1,700</div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px; color: #8B4513;">Dhātus</h3>
+                            <p style="color: #654321;">Verb roots covered</p>
+                        </div>
+                        <div class="stat-card" style="background: #F5E6D3; padding: 40px; border: 2px solid #8B4513; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 5rem; margin-bottom: 20px; color: #654321;">∞</div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px; color: #8B4513;">Words</h3>
+                            <p style="color: #654321;">Can generate infinite words!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fun-fact-box" style="margin-top: 50px;">
+                        <div class="fact-icon">॥</div>
+                        <div class="fact-content">
+                            <h4>Mind-Blowing Fact</h4>
+                            <p>These 3,959 sūtras are so comprehensive that they can generate ALL possible correct Sanskrit words and sentences!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: How It Works -->
+        <div class="slide" id="slide-5">
+            <video class="hero-video" autoplay muted loop playsinline style="opacity: 0.2;">
+                <source src="videos/gears-mechanism.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <div class="slide-content" style="position: relative; z-index: 10;">
+                <div class="content-slide">
+                    <h2 style="color: var(--gold);">How Does It Work?</h2>
+                    <p style="text-align: center; font-size: 1.3rem; color: var(--cream); margin-bottom: 50px;">Think of it like a sophisticated machine...</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 50px; align-items: center; max-width: 1200px; margin: 0 auto;">
+                        <div class="machine-box" style="background: rgba(255, 248, 220, 0.95); padding: 40px; border: 3px solid var(--gold); border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+                            <h3 style="color: #654321; text-align: center; margin-bottom: 20px; font-size: 1.8rem;">INPUT</h3>
+                            <div style="background: #F5E6D3; padding: 20px; border: 1px solid #8B4513; border-radius: 3px; margin-bottom: 15px;">
+                                <p style="color: #654321;">• Root word (dhātu)</p>
+                            </div>
+                            <div style="background: #F5E6D3; padding: 20px; border: 1px solid #8B4513; border-radius: 3px; margin-bottom: 15px;">
+                                <p style="color: #654321;">• Suffix (pratyaya)</p>
+                            </div>
+                            <div style="background: #F5E6D3; padding: 20px; border: 1px solid #8B4513; border-radius: 3px;">
+                                <p style="color: #654321;">• Context/meaning needed</p>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; color: var(--gold); margin-bottom: 20px;">→</div>
+                            <div style="background: rgba(245, 230, 211, 0.95); padding: 20px 40px; border: 3px double var(--gold); border-radius: 5px; font-size: 1.5rem; font-weight: 700; color: #654321; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+                                3,959<br/>RULES
+                            </div>
+                            <div style="font-size: 3rem; color: var(--gold); margin-top: 20px;">→</div>
+                        </div>
+                        
+                        <div class="machine-box" style="background: rgba(232, 245, 233, 0.95); padding: 40px; border: 3px solid #2E7D32; border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+                            <h3 style="color: #2E7D32; text-align: center; margin-bottom: 20px; font-size: 1.8rem;">OUTPUT</h3>
+                            <div style="background: #C8E6C9; padding: 20px; border: 1px solid #2E7D32; border-radius: 3px; margin-bottom: 15px;">
+                                <p style="color: #1B5E20;">✓ Perfectly formed word</p>
+                            </div>
+                            <div style="background: #C8E6C9; padding: 20px; border: 1px solid #2E7D32; border-radius: 3px; margin-bottom: 15px;">
+                                <p style="color: #1B5E20;">✓ Correct sandhi applied</p>
+                            </div>
+                            <div style="background: #C8E6C9; padding: 20px; border: 1px solid #2E7D32; border-radius: 3px;">
+                                <p style="color: #1B5E20;">✓ Grammatically flawless</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Example in Action -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Example: Building a Word</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px; color: #654321;">Let's watch Pāṇini's rules create the word "bhavati" (he/she becomes)</p>
+                    
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <img src="images/process-diagram.jpg" alt="Grammar Process Flow" style="max-width: 100%; border: 3px solid var(--gold); border-radius: 10px; box-shadow: 0 8px 25px var(--shadow-brown);">
+                    </div>
+                    
+                    <div class="process-flow" style="background: #F5E6D3; padding: 40px; border: 2px solid #8B4513; border-radius: 5px; max-width: 800px; margin: 0 auto;">
+                        <div class="step" style="margin-bottom: 25px; padding-left: 40px; position: relative;">
+                            <div style="position: absolute; left: 0; top: 0; width: 30px; height: 30px; background: #8B4513; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">1</div>
+                            <h4 style="color: #654321; margin-bottom: 10px;">Start with root</h4>
+                            <p style="color: #654321;"><strong>भू</strong> (bhū) = "to be"</p>
+                        </div>
+                        
+                        <div class="step" style="margin-bottom: 25px; padding-left: 40px; position: relative;">
+                            <div style="position: absolute; left: 0; top: 0; width: 30px; height: 30px; background: #8B4513; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">2</div>
+                            <h4 style="color: #654321; margin-bottom: 10px;">Apply rules</h4>
+                            <p style="color: #654321;">Sūtra 3.1.68: Add <strong>-ति</strong> (ti) suffix</p>
+                        </div>
+                        
+                        <div class="step" style="margin-bottom: 25px; padding-left: 40px; position: relative;">
+                            <div style="position: absolute; left: 0; top: 0; width: 30px; height: 30px; background: #8B4513; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">3</div>
+                            <h4 style="color: #654321; margin-bottom: 10px;">Strengthen vowel</h4>
+                            <p style="color: #654321;">ū → ava (guṇa change)</p>
+                        </div>
+                        
+                        <div class="step" style="padding-left: 40px; position: relative;">
+                            <div style="position: absolute; left: 0; top: 0; width: 30px; height: 30px; background: #2E7D32; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">✓</div>
+                            <h4 style="color: #654321; margin-bottom: 10px;">Final word</h4>
+                            <p style="color: #654321; font-size: 1.5rem;"><strong>भवति</strong> (bhavati) = "becomes"</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(to right, #F5E6D3, #FFF8DC); padding: 30px; border: 2px solid #D4AF37; border-radius: 5px; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        <h4 style="color: #8B4513; margin-bottom: 20px; font-size: 1.3rem; text-align: center;">How This Rule Thinks</h4>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; align-items: center;">
+                            <div style="background: #FFF8DC; padding: 20px; border: 1px solid #8B4513; border-radius: 4px; text-align: center;">
+                                <div style="font-size: 0.85rem; color: #8B4513; font-weight: 600; margin-bottom: 8px;">INPUT</div>
+                                <div style="color: #654321; font-size: 0.95rem;">Root bhū</div>
+                            </div>
+                            <div style="text-align: center; color: #D4AF37; font-size: 1.5rem;">→</div>
+                            <div style="background: #FFF8DC; padding: 20px; border: 1px solid #8B4513; border-radius: 4px; text-align: center;">
+                                <div style="font-size: 0.85rem; color: #8B4513; font-weight: 600; margin-bottom: 8px;">CONDITION</div>
+                                <div style="color: #654321; font-size: 0.95rem;">3rd person verb?</div>
+                            </div>
+                            <div style="text-align: center; color: #D4AF37; font-size: 1.5rem;">→</div>
+                            <div style="background: #FFF8DC; padding: 20px; border: 1px solid #8B4513; border-radius: 4px; text-align: center;">
+                                <div style="font-size: 0.85rem; color: #8B4513; font-weight: 600; margin-bottom: 8px;">ACTION</div>
+                                <div style="color: #654321; font-size: 0.95rem;">Add -ti + guṇa</div>
+                            </div>
+                            <div style="text-align: center; color: #D4AF37; font-size: 1.5rem;">→</div>
+                            <div style="background: #FFF8DC; padding: 20px; border: 1px solid #8B4513; border-radius: 4px; text-align: center;">
+                                <div style="font-size: 0.85rem; color: #8B4513; font-weight: 600; margin-bottom: 8px;">OUTPUT</div>
+                                <div style="color: #654321; font-size: 0.95rem;">bhavati</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Types of Sūtras -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Types of Sūtras</h2>
+                    <p style="font-size: 1.2rem; color: #654321; margin-bottom: 40px;">Not all rules are created equal! Pāṇini organized them into categories:</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                        <div class="sutra-type-card" style="background: #F5E6D3; padding: 35px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="color: #654321; margin-bottom: 15px;">Vidhi Sūtras</h3>
+                            <p style="color: #654321; line-height: 1.6;">Operational rules that tell you what to do</p>
+                            <div style="background: #FFF8DC; padding: 15px; border: 1px solid #8B4513; border-radius: 3px; margin-top: 20px;">
+                                <p style="color: #8B4513; font-weight: 600;">Example: "Add this suffix"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sutra-type-card" style="background: #FFF8DC; padding: 35px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="color: #654321; margin-bottom: 15px;">Paribhāṣā Sūtras</h3>
+                            <p style="color: #654321; line-height: 1.6;">Meta-rules that govern how other rules work</p>
+                            <div style="background: #F5E6D3; padding: 15px; border: 1px solid #8B4513; border-radius: 3px; margin-top: 20px;">
+                                <p style="color: #8B4513; font-weight: 600;">Example: "When rules conflict..."</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sutra-type-card" style="background: #F5E6D3; padding: 35px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="color: #654321; margin-bottom: 15px;">Adhikāra Sūtras</h3>
+                            <p style="color: #654321; line-height: 1.6;">Topic headers that apply to many following rules</p>
+                            <div style="background: #FFF8DC; padding: 15px; border: 1px solid #8B4513; border-radius: 3px; margin-top: 20px;">
+                                <p style="color: #8B4513; font-weight: 600;">Example: "In this section..."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Technical Features -->
+        <div class="slide" id="slide-8">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Revolutionary Technical Features</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: #654321; margin-bottom: 50px;">Inventions that were 2,000 years ahead of their time!</p>
+                    
+                    <div class="achievements-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                        <div class="achievement-card" style="background: #F5E6D3; padding: 30px; border: 2px solid #8B4513; border-radius: 5px;">
+                            <h3 style="color: #654321; margin-bottom: 15px;">Pratyāhāra</h3>
+                            <p style="color: #654321; margin-bottom: 15px;">Shorthand notation using first and last letters to represent sets of sounds (like regex!)</p>
+                            <div style="background: #FFF8DC; padding: 15px; border: 1px solid #8B4513; border-radius: 3px; margin-bottom: 12px;">
+                                <code style="color: #654321; font-size: 1.1rem;">अच् = all vowels</code>
+                            </div>
+                            <div style="background: #F5E6D3; padding: 12px; border-left: 3px solid #8B4513; font-size: 0.95rem;">
+                                <strong style="color: #8B4513;">WHY:</strong> <span style="color: #654321;">Oral tradition required extreme brevity. Listing all vowels every time would make memorization impossible.</span>
+                            </div>
+                            
+                            <div style="background: rgba(245, 230, 211, 0.6); padding: 15px 20px; margin-top: 20px; border-radius: 4px; font-style: italic;">
+                                <p style="color: #654321; font-size: 0.95rem; line-height: 1.6; margin: 0;"><em style="color: #8B4513; font-weight: 600;">Why Pāṇini did this?</em><br>
+                                The grammar had to live in human memory, not on paper. Every syllable saved meant thousands of hours saved across generations of students. Pratyāhāra was compression out of necessity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-card" style="background: #FFF8DC; padding: 30px; border: 2px solid #8B4513; border-radius: 5px;">
+                            <h3 style="color: #654321; margin-bottom: 15px;">IT Markers</h3>
+                            <p style="color: #654321; margin-bottom: 15px;">Special indicators that appear in rules but not in final words (like programming comments!)</p>
+                            <div style="background: #F5E6D3; padding: 15px; border: 1px solid #8B4513; border-radius: 3px; margin-bottom: 12px;">
+                                <code style="color: #654321; font-size: 1.1rem;">णिच् → नि</code>
+                            </div>
+                            <div style="background: #F5E6D3; padding: 12px; border-left: 3px solid #8B4513; font-size: 0.95rem;">
+                                <strong style="color: #8B4513;">WHY:</strong> <span style="color: #654321;">Needed metadata to control rules without changing actual words—exactly like comments in code!</span>
+                            </div>
+                            
+                            <div style="background: rgba(245, 230, 211, 0.6); padding: 15px 20px; margin-top: 20px; border-radius: 4px; font-style: italic;">
+                                <p style="color: #654321; font-size: 0.95rem; line-height: 1.6; margin: 0;"><em style="color: #8B4513; font-weight: 600;">Why Pāṇini did this?</em><br>
+                                Rules needed instructions for themselves without polluting the final language. IT markers were invisible scaffolding—present in the rule, absent in speech.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-card" style="background: #FFF8DC; padding: 30px; border: 2px solid #8B4513; border-radius: 5px;">
+                            <h3 style="color: #654321; margin-bottom: 15px;">Zero Affixes</h3>
+                            <p style="color: #654321; margin-bottom: 15px;">Invisible suffixes that carry meaning but add no letters (abstract grammar!)</p>
+                            <div style="background: #F5E6D3; padding: 15px; border: 1px solid #8B4513; border-radius: 3px;">
+                                <code style="color: #654321; font-size: 1.1rem;">∅ = silent suffix</code>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-card" style="background: #F5E6D3; padding: 30px; border: 2px solid #8B4513; border-radius: 5px;">
+                            <h3 style="color: #654321; margin-bottom: 15px;">Recursive Rules</h3>
+                            <p style="color: #654321; margin-bottom: 15px;">Rules that reference themselves or loop back, creating infinite possibilities!</p>
+                            <div style="background: #FFF8DC; padding: 15px; border: 1px solid #8B4513; border-radius: 3px;">
+                                <code style="color: #654321; font-size: 1.1rem;">f(x) = f(f(x))</code>
+                            </div>
+                            
+                            <div style="background: rgba(245, 230, 211, 0.6); padding: 15px 20px; margin-top: 20px; border-radius: 4px; font-style: italic;">
+                                <p style="color: #654321; font-size: 0.95rem; line-height: 1.6; margin: 0;"><em style="color: #8B4513; font-weight: 600;">Why Pāṇini did this?</em><br>
+                                Language is infinite—you can always add another word to a sentence. Rules needed the power to apply repeatedly, creating compounds of compounds, generating endless valid forms from finite instructions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Śiva Sūtras -->
+        <div class="slide" id="slide-9">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>The Śiva Sūtras</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px; color: #654321;">Before the main text, Pāṇini created an ingenious sound chart...</p>
+                    
+                    <audio id="sutra-chant">
+                        <source src="audio/sutra-chanting.mp3" type="audio/mp3">
+                    </audio>
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <button class="demo-button" onclick="document.getElementById('sutra-chant').play()">
+                            Hear Sūtra Chanting
+                        </button>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+                        <div>
+                            <div class="legend-box" style="background: #F5E6D3; padding: 30px; border: 2px solid #8B4513; border-radius: 5px; margin-bottom: 30px;">
+                                <h3 style="margin-bottom: 15px; color: #654321;">The Legend</h3>
+                                <p style="color: #654321; line-height: 1.7;">According to tradition, Lord Śiva performed the Tāṇḍava dance at the end of his cosmic dance. From the rhythm of his ḍamaru (drum), these 14 sounds emerged!</p>
+                            </div>
+                            
+                            <div class="fun-fact-box">
+                                <div class="fact-icon">॥</div>
+                                <div class="fact-content">
+                                    <h4>Genius Compression</h4>
+                                    <p>These 14 sūtras encode ALL Sanskrit sounds in a way that makes the main grammar rules incredibly concise!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="background: #FFF8DC; padding: 30px; border: 3px double #8B4513; border-radius: 5px;">
+                                <h3 style="color: #654321; margin-bottom: 20px; text-align: center;">The 14 Śiva Sūtras</h3>
+                                <div class="shiva-sutras" style="font-family: 'Noto Sans Devanagari', serif; font-size: 1.5rem; line-height: 2.5; color: #8B4513;">
+                                    <p>1. अइउण्</p>
+                                    <p>2. ऋऌक्</p>
+                                    <p>3. एओङ्</p>
+                                    <p>4. ऐऔच्</p>
+                                    <p>5. हयवरट्</p>
+                                    <p>6. लण्</p>
+                                    <p>7. ञमङणनम्</p>
+                                    <p>8. झभञ्</p>
+                                    <p>9. घढधष्</p>
+                                    <p>10. जबगडदश्</p>
+                                    <p>11. खफछठथचटतव्</p>
+                                    <p>12. कपय्</p>
+                                    <p>13. शषसर्</p>
+                                    <p>14. हल्</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Compactness -->
+        <div class="slide" id="slide-10">
+            <div class="slide-content">
+                <div class="content-slide">
+                    <h2>Extreme Compactness</h2>
+                    <p style="font-size: 1.3rem; color: #654321; margin-bottom: 50px; text-align: center;">Each sūtra is incredibly condensed - often just 1-3 words!</p>
+                    
+                    <div class="comparison-box" style="max-width: 900px; margin: 0 auto;">
+                        <div class="compare-item" style="background: #F5E6D3; padding: 40px; border: 2px solid #8B4513; border-radius: 5px; margin-bottom: 30px;">
+                            <h3 style="color: #654321; margin-bottom: 20px; font-size: 1.8rem;">One Sūtra</h3>
+                            <div style="font-size: 2.5rem; margin-bottom: 20px; color: #8B4513;">वृद्धिरादैच् (1.1.1)</div>
+                            <p style="font-size: 1.2rem; color: #654321;">Just 3 syllables!</p>
+                        </div>
+                        
+                        <div style="font-size: 3rem; color: #8B4513; margin: 30px 0; text-align: center;">↓</div>
+                        
+                        <div class="compare-item" style="background: #FFF8DC; padding: 40px; border: 2px solid #8B4513; border-radius: 5px;">
+                            <h3 style="color: #654321; margin-bottom: 20px; font-size: 1.8rem;">Means</h3>
+                            <p style="font-size: 1.3rem; line-height: 1.8; color: #654321;">"The sounds आ (ā), ऐ (ai), and औ (au) are called vṛddhi"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fun-fact-box" style="margin-top: 50px;">
+                        <div class="fact-icon">॥</div>
+                        <div class="fact-content">
+                            <h4>Ancient Compression Algorithm</h4>
+                            <p>In an age without printing, this extreme brevity was essential for memorization. One commentator said: "Not even half a syllable is wasted!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Impact & Influence -->
+        <div class="slide" id="slide-11">
+            <video class="hero-video" autoplay muted loop playsinline style="opacity: 0.15;">
+                <source src="videos/library-books.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <div class="slide-content" style="position: relative; z-index: 10;">
+                <div class="content-slide">
+                    <h2>Why It Matters Today</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1000px; margin: 40px auto;">
+                        <div style="background: #F5E6D3; padding: 30px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="color: #654321; margin: 15px 0; font-size: 1.5rem;">Still Taught</h3>
+                            <p style="color: #654321; font-size: 1.1rem;">Required study for Sanskrit scholars worldwide</p>
+                        </div>
+                        
+                        <div style="background: #FFF8DC; padding: 30px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="color: #654321; margin: 15px 0; font-size: 1.5rem;">Scientific Approach</h3>
+                            <p style="color: #654321; font-size: 1.1rem;">Inspired modern formal grammar theory</p>
+                        </div>
+                        
+                        <div style="background: #FFF8DC; padding: 30px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="color: #654321; margin: 15px 0; font-size: 1.5rem;">Computing</h3>
+                            <p style="color: #654321; font-size: 1.1rem;">Foundation for programming language syntax</p>
+                        </div>
+                        
+                        <div style="background: #F5E6D3; padding: 30px; border: 2px solid #8B4513; border-radius: 5px; text-align: center;">
+                            <h3 style="color: #654321; margin: 15px 0; font-size: 1.5rem;">Universal Model</h3>
+                            <p style="color: #654321; font-size: 1.1rem;">Template for analyzing any language</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Completion -->
+        <div class="slide" id="slide-12">
+            <div class="slide-content">
+                <div class="content-slide" style="text-align: center;">
+                    <h2>Chapter 2 Complete!</h2>
+                    <p style="font-size: 1.3rem; margin: 30px 0; color: #654321;">You now understand the architecture of the Aṣṭādhyāyī!</p>
+                    
+                    <div class="chapter-summary" style="max-width: 800px; margin: 0 auto; text-align: left;">
+                        <div style="background: #F5E6D3; padding: 30px; border: 3px double #8B4513; border-radius: 5px; margin: 30px 0;">
+                            <h3 style="margin-bottom: 20px; color: #654321;">What You Learned:</h3>
+                            <ul style="font-size: 1.2rem; line-height: 2; color: #654321;">
+                                <li>8 chapters, 32 quarters, 3,959 sūtras</li>
+                                <li>How rules work like a machine</li>
+                                <li>Different types of sūtras</li>
+                                <li>Technical innovations (pratyāhāra, IT markers)</li>
+                                <li>The Śiva Sūtras sound chart</li>
+                                <li>Why it still matters today</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <button class="chapter-button" onclick="completeChapter(2)">
+                        Continue to Chapter 3
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="slide-nav">
+            <button class="nav-button" id="prev-btn" onclick="prevSlide()" disabled>← Previous</button>
+            <span class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">12</span>
+            </span>
+            <button class="nav-button" id="next-btn" onclick="nextSlide()">Next →</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+</body>
+</html>

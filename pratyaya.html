@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratyaya - Digital Pāṇini</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pratyaya-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5E6D3 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #D4AF37;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            color: #654321;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            color: #8B4513;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .search-section {
+            background: #F5E6D3;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #8B4513;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background: white;
+            border: 2px solid #8B4513;
+            border-radius: 6px;
+            color: #654321;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #D4AF37;
+            color: white;
+            border-color: #D4AF37;
+        }
+
+        .pratyaya-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .pratyaya-card {
+            background: #FFF8DC;
+            border: 2px solid #8B4513;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pratyaya-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+            border-color: #D4AF37;
+        }
+
+        .pratyaya-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .pratyaya-suffix {
+            font-size: 1.6rem;
+            color: #654321;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+        }
+
+        .pratyaya-type {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #8B4513;
+            font-weight: 600;
+        }
+
+        .pratyaya-function {
+            color: #8B4513;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .pratyaya-examples {
+            background: rgba(139, 69, 19, 0.05);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        .pratyaya-examples-title {
+            font-size: 0.85rem;
+            color: #654321;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .example-formation {
+            display: block;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 6px 0;
+            font-size: 0.9rem;
+            color: #654321;
+            border: 1px solid #8B4513;
+        }
+
+        .formation-arrow {
+            color: #D4AF37;
+            font-weight: 700;
+            margin: 0 5px;
+        }
+
+        .learn-more-btn {
+            display: block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #D4AF37;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3);
+        }
+
+        .learn-more-btn:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8B4513;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .pratyaya-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Digital Pāṇini</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="panini.html">About Pāṇini</a>
+            <a href="learn.html" class="active">Learn Grammar</a>
+            <a href="ashtadhyayi-detailed.html">Sūtra Reference</a>
+        </div>
+    </nav>
+
+    <div class="container pratyaya-container">
+        <h1>Pratyaya (प्रत्यय)</h1>
+        <p class="subtitle">Suffixes That Create Meaning</p>
+        
+        <!-- Introduction -->
+        <div class="intro-section">
+            <h2>What is a Pratyaya?</h2>
+            <p>
+                A <strong>pratyaya</strong> (suffix) is added to a dhātu (root) or another word to create new forms and meanings. 
+                Pāṇini categorized pratyayas into Kṛt (primary - added to roots) and Taddhita (secondary - added to complete words). 
+                These suffixes transform roots into verbs, nouns, adjectives, and more.
+            </p>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by suffix or function (e.g., तव्यत् or 'agent noun')...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Suffixes</button>
+                <button class="filter-btn" data-filter="krt">Kṛt (Primary)</button>
+                <button class="filter-btn" data-filter="taddhita">Taddhita (Secondary)</button>
+                <button class="filter-btn" data-filter="common">Most Common</button>
+            </div>
+        </div>
+
+        <!-- Pratyaya Grid -->
+        <div class="pratyaya-grid" id="pratyayaGrid">
+            <!-- Cards will be generated by JavaScript -->
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            No suffixes found matching your search.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Pratyaya Database
+        const pratyayaDatabase = [
+            { suffix: 'तव्यत्', transliteration: 'tavyat', pratyayaId: '3.1.96', function: 'Obligation/necessity (must be done)', type: 'krt', typeName: 'Kṛt', common: true, examples: ['√कृ + तव्यत् → कर्तव्य (kartavya - must be done)', '√पठ् + तव्यत् → पठितव्य (paṭhitavya - must be read)'] },
+            { suffix: 'अनीयर्', transliteration: 'anīyar', pratyayaId: '3.1.96', function: 'Obligation (should be done)', type: 'krt', typeName: 'Kṛt', common: true, examples: ['√दृश् + अनीयर् → दर्शनीय (darśanīya - should be seen)', '√श्रु + अनीयर् → श्रवणीय (śravaṇīya - should be heard)'] },
+            { suffix: 'तृच्', transliteration: 'tṛc', pratyayaId: '3.1.133', function: 'Agent noun (one who does)', type: 'krt', typeName: 'Kṛt', common: true, examples: ['√कृ + तृच् → कर्तृ (kartṛ - doer)', '√दा + तृच् → दातृ (dātṛ - giver)'] },
+            { suffix: 'क्त', transliteration: 'kta', pratyayaId: '3.2.102', function: 'Past participle (done)', type: 'krt', typeName: 'Kṛt', common: true, examples: ['√कृ + क्त → कृत (kṛta - done)', '√गम् + क्त → गत (gata - gone)'] },
+            { suffix: 'क्त्वा', transliteration: 'ktvā', pratyayaId: '3.4.21', function: 'Absolutive (having done)', type: 'krt', typeName: 'Kṛt', common: true, examples: ['√कृ + क्त्वा → कृत्वा (kṛtvā - having done)', '√गम् + क्त्वा → गत्वा (gatvā - having gone)'] },
+            { suffix: 'ल्युट्', transliteration: 'lyuṭ', pratyayaId: '3.3.115', function: 'Action noun (the act of)', type: 'krt', typeName: 'Kṛt', common: true, examples: ['√गम् + ल्युट् → गमन (gamana - going)', '√पठ् + ल्युट् → पठन (paṭhana - reading)'] },
+            { suffix: 'शतृ', transliteration: 'śatṛ', pratyayaId: '3.2.124', function: 'Present active participle', type: 'krt', typeName: 'Kṛt', common: true, examples: ['√भू + शतृ → भवत् (bhavat - being)', '√गम् + शतृ → गच्छत् (gacchat - going)'] },
+            { suffix: 'ण्वुल्', transliteration: 'ṇvul', pratyayaId: '3.1.133', function: 'Agent noun (profession)', type: 'krt', typeName: 'Kṛt', common: false, examples: ['√गै + ण्वुल् → गायक (gāyaka - singer)', '√नृत् + ण्वुल् → नर्तक (nartaka - dancer)'] },
+            { suffix: 'तल्', transliteration: 'tal', pratyayaId: '5.1.119', function: 'Abstract noun quality', type: 'taddhita', typeName: 'Taddhita', common: true, examples: ['पुरुष + तल् → पुरुषत्व (puruṣatva - masculinity)', 'देव + तल् → देवत्व (devatva - divinity)'] },
+            { suffix: 'तम', transliteration: 'tama', pratyayaId: '5.3.55', function: 'Superlative (most)', type: 'taddhita', typeName: 'Taddhita', common: true, examples: ['गुरु + तम → गुरुतम (gurutama - heaviest)', 'लघु + तम → लघुतम (laghutama - lightest)'] },
+            { suffix: 'तर', transliteration: 'tara', pratyayaId: '5.3.57', function: 'Comparative (more)', type: 'taddhita', typeName: 'Taddhita', common: true, examples: ['गुरु + तर → गुरुतर (gurutara - heavier)', 'लघु + तर → लघुतर (laghutara - lighter)'] },
+            { suffix: 'मतुप्', transliteration: 'matup', pratyayaId: '5.2.94', function: 'Possessive (having)', type: 'taddhita', typeName: 'Taddhita', common: true, examples: ['बुद्धि + मतुप् → बुद्धिमत् (buddhimat - intelligent)', 'धन + मतुप् → धनवत् (dhanavat - wealthy)'] },
+            { suffix: 'ष्यञ्', transliteration: 'ṣyañ', pratyayaId: '3.1.33', function: 'Future tense marker', type: 'krt', typeName: 'Kṛt', common: true, examples: ['√कृ + ष्यञ् → करिष्य (kariṣya - will do)', '√गम् + ष्यञ् → गमिष्य (gamiṣya - will go)'] },
+            { suffix: 'युच्', transliteration: 'yuc', pratyayaId: '5.1.3', function: 'Abstract noun (state of)', type: 'taddhita', typeName: 'Taddhita', common: false, examples: ['मनुष्य + युच् → मानुष्य (mānuṣya - humanity)', 'ब्राह्मण + युच् → ब्राह्मण्य (brāhmaṇya - brahminhood)'] },
+            { suffix: 'क्तिन्', transliteration: 'ktin', pratyayaId: '3.3.94', function: 'Action noun (feminine)', type: 'krt', typeName: 'Kṛt', common: false, examples: ['√कृ + क्तिन् → क्रिया (kriyā - action)', '√मृ + क्तिन् → मृति (mṛti - death)'] }
+        ];
+
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        // Initialize
+        renderPratyayas();
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchTerm = e.target.value.toLowerCase();
+            renderPratyayas();
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderPratyayas();
+            });
+        });
+
+        function renderPratyayas() {
+            const grid = document.getElementById('pratyayaGrid');
+            const noResults = document.getElementById('noResults');
+            
+            // Filter pratyayas
+            let filtered = pratyayaDatabase.filter(pratyaya => {
+                // Apply type filter
+                if (currentFilter !== 'all') {
+                    if (currentFilter === 'common' && !pratyaya.common) return false;
+                    if (currentFilter !== 'common' && pratyaya.type !== currentFilter) return false;
+                }
+                
+                // Apply search filter
+                if (searchTerm) {
+                    return pratyaya.suffix.toLowerCase().includes(searchTerm) ||
+                           pratyaya.transliteration.toLowerCase().includes(searchTerm) ||
+                           pratyaya.function.toLowerCase().includes(searchTerm);
+                }
+                
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+
+            grid.innerHTML = filtered.map(pratyaya => `
+                <div class="pratyaya-card">
+                    <div class="pratyaya-header">
+                        <span class="pratyaya-suffix">${pratyaya.suffix}</span>
+                        <span class="pratyaya-type">${pratyaya.typeName}</span>
+                    </div>
+                    <div class="pratyaya-function">${pratyaya.function}</div>
+                    <div class="pratyaya-examples">
+                        <div class="pratyaya-examples-title">Formation Examples:</div>
+                        ${pratyaya.examples.map(ex => `<div class="example-formation">${ex}</div>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Digital Pāṇini | Designed & Developed by Karthik S | Academic Project (IKS)</p>
+        </div>
+    </footer>
+</body>
+</html>
